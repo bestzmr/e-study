@@ -1,6 +1,7 @@
-package cn.itweknow.sbswagger.config;
+package cn.bestsort.e_study.config;
 
 import com.google.common.base.Predicates;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -25,11 +26,13 @@ import static com.google.common.collect.Lists.newArrayList;
 @Configuration
 @EnableSwagger2
 public class SwaggerConfig {
+    @Value("${swagger.base-package}")
+    private String basePackage;
     @Bean
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("cn.itweknow.sbswagger.controller"))
+                .apis(RequestHandlerSelectors.basePackage(basePackage))
                 .paths(Predicates.or(PathSelectors.ant("/user/add"),
                         PathSelectors.ant("/user/find/*")))
                 .build()

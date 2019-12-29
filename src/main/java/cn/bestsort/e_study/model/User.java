@@ -1,4 +1,4 @@
-package cn.itweknow.sbswagger.model;
+package cn.bestsort.e_study.model;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

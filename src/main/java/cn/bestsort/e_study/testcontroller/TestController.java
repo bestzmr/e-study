@@ -1,4 +1,4 @@
-package cn.itweknow.sbswagger.testcontroller;
+package cn.bestsort.e_study.testcontroller;
 
 import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,4 +1,4 @@
-package cn.itweknow.sbswagger;
+package cn.bestsort.e_study;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

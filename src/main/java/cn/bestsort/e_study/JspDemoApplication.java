@@ -1,13 +1,13 @@
-package cn.itweknow.sbswagger;
+package cn.bestsort.e_study;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SbSwaggerApplication {
+public class JspDemoApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SbSwaggerApplication.class, args);
+        SpringApplication.run(JspDemoApplication.class, args);
     }
 
 }
