@@ -1,6 +1,5 @@
 package cn.bestsort.e_study.config;
 
-import com.google.common.base.Predicates;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -9,13 +8,9 @@ import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.builders.ResponseMessageBuilder;
 import springfox.documentation.schema.ModelRef;
-import springfox.documentation.service.ApiInfo;
-import springfox.documentation.service.Contact;
-import springfox.documentation.service.VendorExtension;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
-import java.util.Collections;
 
 import static com.google.common.collect.Lists.newArrayList;
 
@@ -27,37 +22,14 @@ import static com.google.common.collect.Lists.newArrayList;
 @Configuration
 @EnableSwagger2
 public class SwaggerConfig {
-    @Value("${swagger.base-package}")
-    private String basePackage;
+
     @Bean
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage(basePackage))
+                .apis(RequestHandlerSelectors.basePackage("cn.bestsort.e_study.controller"))
                 .paths(PathSelectors.any())
                 .build()
-                .apiInfo(apiInfo())
-                .useDefaultResponseMessages(false)
-                .globalResponseMessage(RequestMethod.GET, newArrayList(
-                        new ResponseMessageBuilder()
-                                .code(500)
-                                .message("服务器发生异常")
-                                .responseModel(new ModelRef("Error"))
-                                .build(),
-                        new ResponseMessageBuilder()
-                                .code(403)
-                                .message("资源不可用")
-                                .build()
-                ));
-    }
-
-    private ApiInfo apiInfo() {
-        return new ApiInfo(
-                "Spring Boot项目集成Swagger实例文档",
-                "api网站：http://localhost:8080/swagger-ui.html#/，欢迎大家访问。",
-                "API V1.0",
-                "Terms of service",
-                new Contact("名字想好没", "https://itweknow.cn", "gancy.programmer@gmail.com"),
-                "Apache", "http://www.apache.org/", Collections.<VendorExtension>emptyList());
+                .useDefaultResponseMessages(false);
     }
 }

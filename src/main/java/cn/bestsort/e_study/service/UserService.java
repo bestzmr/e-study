@@ -27,8 +27,8 @@ public class UserService {
         return true;
     }
     public Boolean addUser(User user){
-        int result = userMapper.insertSelective(user);
-        if (result == 1){
+        int addResult = userMapper.insertSelective(user);
+        if (addResult == 1){
             return true;
         }
         return false;
@@ -41,5 +41,11 @@ public class UserService {
             return false;
         }
         return true;
+    }
+    public long getUserId(User user){
+        UserExample userExample = new UserExample();
+        userExample.createCriteria().andTelEqualTo(user.getTel());
+        List<User> userList = userMapper.selectByExample(userExample);
+        return userList.get(0).getId();
     }
 }

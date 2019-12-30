@@ -1,6 +1,8 @@
 package cn.bestsort.e_study.controller;
 
+import cn.bestsort.e_study.pojo.dto.Course;
 import cn.bestsort.e_study.pojo.dto.User;
+import cn.bestsort.e_study.service.SelectCourseService;
 import cn.bestsort.e_study.service.UserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -17,6 +19,8 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
     @Autowired
     private UserService userService;
+    @Autowired
+    private SelectCourseService selectCourseService;
     @ApiOperation(value = "新增用户",notes = "这里是备注信息")
     @PostMapping("/add")
     public boolean addUser(@RequestBody User user) {
@@ -44,26 +48,30 @@ public class UserController {
 
     @ApiOperation(value = "用户注册")
     @PostMapping("/register")
-    public Boolean register(@RequestParam User user){
+    public Boolean register( User user,  Course course){
         if (userService.isUserExist(user.getTel())){
             //该用户已存在
             return false;
         }else{
             //用户不存在，添加该用户
             boolean result = userService.addUser(user);
-            if (result){
-                //注册成功，返回登录页面
-                return true;
-            }else{
+            if(result == false){
                 //注册失败，请重新输入
                 return false;
             }
+            //选课
+            boolean addSelectCourseResult = selectCourseService.addSelectCourse(course,userService.getUserId(user));
+            if (addSelectCourseResult == false){
+                //注册成功，返回登录页面
+                return false;
+            }
+            return true;
         }
     }
 
     @ApiOperation(value = "用户登录")
     @GetMapping("/login")
-    public Boolean login(@RequestParam User user){
+    public Boolean login( User user){
         if (userService.login(user)){
             return true;
         }

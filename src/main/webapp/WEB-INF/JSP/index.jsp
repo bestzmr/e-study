@@ -1,16 +1,23 @@
 <%--
   Created by IntelliJ IDEA.
-  User: zhaoqiang
+  User: ASUS
   Date: 2019/12/30
-  Time: 9:38
+  Time: 16:33
   To change this template use File | Settings | File Templates.
 --%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>indexz</title>
+    <title>index</title>
 </head>
 <body>
 hello,world
+<form action="/video/uploadVideo" method="post">
+    <input type="file" id="file" multiple>
+    <input type="submit" id="submitForm">
+</form>
+
 </body>
 </html>
