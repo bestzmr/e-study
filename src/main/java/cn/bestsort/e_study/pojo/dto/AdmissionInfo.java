@@ -11,6 +11,8 @@ public class AdmissionInfo {
 
     private Integer schoolYear;
 
+    private Byte schoolType;
+
     public Long getId() {
         return id;
     }
@@ -51,6 +53,14 @@ public class AdmissionInfo {
         this.schoolYear = schoolYear;
     }
 
+    public Byte getSchoolType() {
+        return schoolType;
+    }
+
+    public void setSchoolType(Byte schoolType) {
+        this.schoolType = schoolType;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -62,6 +72,7 @@ public class AdmissionInfo {
         sb.append(", policy=").append(policy);
         sb.append(", policyDescription=").append(policyDescription);
         sb.append(", schoolYear=").append(schoolYear);
+        sb.append(", schoolType=").append(schoolType);
         sb.append("]");
         return sb.toString();
     }

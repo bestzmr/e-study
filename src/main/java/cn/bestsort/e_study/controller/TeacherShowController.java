@@ -23,7 +23,7 @@ public class TeacherShowController {
     @Autowired
     private TeacherShowService teacherShowService;
 
-    @ApiOperation("通过pageNo(页码)和pageSize(页大小)获取对应列表")
+    @ApiOperation("通过pageNo(页码)和pageSize(页大小)获取对应教师风采列表")
     @GetMapping("/listTeacherShows")
     public PageInfo<TeacherShow> listTeacherShow(@RequestParam(name = "pageSize",defaultValue = "5") int pageSize,
                                              @RequestParam(name = "pageNo",defaultValue = "1") int pageNo){
