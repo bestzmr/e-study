@@ -6,7 +6,7 @@ create table user(
     age int not null ,
     sex tinyint not null ,
     school varchar(20),
-    class int,
+    user_class int,
     grade float ,
     /* 用户类型: 教师,学生 */
     is_admin tinyint default 0,

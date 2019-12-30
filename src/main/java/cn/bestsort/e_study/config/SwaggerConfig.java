@@ -19,8 +19,8 @@ import java.util.Collections;
 import static com.google.common.collect.Lists.newArrayList;
 
 /**
- * @author ganchaoyang
- * @date 2019/3/1014:16
+ * @author zhaoqiang
+ * @date 2019/12/30
  */
 
 @Configuration
@@ -33,8 +33,7 @@ public class SwaggerConfig {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
                 .apis(RequestHandlerSelectors.basePackage(basePackage))
-                .paths(Predicates.or(PathSelectors.ant("/user/add"),
-                        PathSelectors.ant("/user/find/*")))
+                .paths(PathSelectors.any())
                 .build()
                 .apiInfo(apiInfo())
                 .useDefaultResponseMessages(false)
@@ -57,7 +56,7 @@ public class SwaggerConfig {
                 "api网站：http://localhost:8080/swagger-ui.html#/，欢迎大家访问。",
                 "API V1.0",
                 "Terms of service",
-                new Contact("E学网报名平台", " ---  ", "  ---  "),
+                new Contact("名字想好没", "https://itweknow.cn", "gancy.programmer@gmail.com"),
                 "Apache", "http://www.apache.org/", Collections.emptyList());
     }
 }

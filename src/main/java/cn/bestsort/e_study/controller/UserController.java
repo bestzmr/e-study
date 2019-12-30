@@ -1,6 +1,6 @@
 package cn.bestsort.e_study.controller;
 
-import cn.bestsort.e_study.model.User;
+import cn.bestsort.e_study.pojo.entity.User;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
