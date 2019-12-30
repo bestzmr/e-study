@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * TODO
+ * 教师风采相关API
  *
  * @author bestsort
  * @version 1.0
