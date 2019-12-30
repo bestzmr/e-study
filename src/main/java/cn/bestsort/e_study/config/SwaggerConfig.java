@@ -11,6 +11,7 @@ import springfox.documentation.builders.ResponseMessageBuilder;
 import springfox.documentation.schema.ModelRef;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.service.Contact;
+import springfox.documentation.service.VendorExtension;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
@@ -57,6 +58,6 @@ public class SwaggerConfig {
                 "API V1.0",
                 "Terms of service",
                 new Contact("名字想好没", "https://itweknow.cn", "gancy.programmer@gmail.com"),
-                "Apache", "http://www.apache.org/", Collections.emptyList());
+                "Apache", "http://www.apache.org/", Collections.<VendorExtension>emptyList());
     }
 }

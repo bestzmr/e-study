@@ -1,6 +1,9 @@
 package cn.bestsort.e_study.mapper;
 
 import java.util.List;
+
+import cn.bestsort.e_study.pojo.dto.AdmissionInfo;
+import cn.bestsort.e_study.pojo.dto.AdmissionInfoExample;
 import org.apache.ibatis.annotations.Param;
 
 public interface AdmissionInfoMapper {

@@ -1,11 +1,10 @@
 package cn.bestsort.e_study.service;
 
 import cn.bestsort.e_study.mapper.TeacherShowMapper;
-<<<<<<< HEAD
-=======
+
+
 import cn.bestsort.e_study.pojo.dto.TeacherShow;
 import cn.bestsort.e_study.pojo.dto.TeacherShowExample;
->>>>>>> buffer
 import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
