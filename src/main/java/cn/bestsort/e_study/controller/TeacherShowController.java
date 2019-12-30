@@ -1,6 +1,5 @@
 package cn.bestsort.e_study.controller;
 
-import cn.bestsort.e_study.pojo.dto.TeacherShow;
 import cn.bestsort.e_study.service.TeacherShowService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

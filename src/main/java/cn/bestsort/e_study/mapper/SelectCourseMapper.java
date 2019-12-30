@@ -1,7 +1,5 @@
 package cn.bestsort.e_study.mapper;
 
-import cn.bestsort.e_study.pojo.dto.SelectCourse;
-import cn.bestsort.e_study.pojo.dto.SelectCourseExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
