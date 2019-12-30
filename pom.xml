@@ -11,9 +11,9 @@
         <maven.compiler.target>1.8</maven.compiler.target>
 
         <!-- 数据库配置  -->
-        <jdbc.url>jdbc:mysql://localhost:3306/bbs_lite?serverTimezone=UTC&amp;useUnicode=true&amp;characterEncoding=UTF-8</jdbc.url>
-        <jdbc.user>bestsort</jdbc.user>
-        <jdbc.passwd>ce8YChPDJ5GRFOUE</jdbc.passwd>
+        <jdbc.url>jdbc:mysql://localhost:3306/e_study?serverTimezone=UTC&amp;useUnicode=true&amp;characterEncoding=UTF-8</jdbc.url>
+        <jdbc.user>admin</jdbc.user>
+        <jdbc.passwd>AdminPassword</jdbc.passwd>
     </properties>
 
     <groupId>cn.bestsort</groupId>
