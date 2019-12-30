@@ -33,8 +33,7 @@ public class SwaggerConfig {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
                 .apis(RequestHandlerSelectors.basePackage(basePackage))
-                .paths(Predicates.or(PathSelectors.ant("/user/add"),
-                        PathSelectors.ant("/user/find/*")))
+                .paths(PathSelectors.any())
                 .build()
                 .apiInfo(apiInfo())
                 .useDefaultResponseMessages(false)

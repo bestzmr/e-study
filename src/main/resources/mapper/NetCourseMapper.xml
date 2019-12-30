@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.bestsort.e_study.mapper.NetCourseMapper">
-  <resultMap id="BaseResultMap" type="cn.bestsort.e_study.dto.NetCourse">
+  <resultMap id="BaseResultMap" type="cn.bestsort.e_study.pojo.dto.NetCourse">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="description" jdbcType="VARCHAR" property="description" />
@@ -68,7 +68,7 @@
   <sql id="Base_Column_List">
     id, name, description, url
   </sql>
-  <select id="selectByExample" parameterType="cn.bestsort.e_study.dto.NetCourseExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="cn.bestsort.e_study.pojo.dto.NetCourseExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -92,19 +92,19 @@
     delete from net_course
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <delete id="deleteByExample" parameterType="cn.bestsort.e_study.dto.NetCourseExample">
+  <delete id="deleteByExample" parameterType="cn.bestsort.e_study.pojo.dto.NetCourseExample">
     delete from net_course
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="cn.bestsort.e_study.dto.NetCourse">
+  <insert id="insert" parameterType="cn.bestsort.e_study.pojo.dto.NetCourse">
     insert into net_course (id, name, description, 
       url)
     values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, 
       #{url,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="cn.bestsort.e_study.dto.NetCourse">
+  <insert id="insertSelective" parameterType="cn.bestsort.e_study.pojo.dto.NetCourse">
     insert into net_course
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -135,7 +135,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="cn.bestsort.e_study.dto.NetCourseExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="cn.bestsort.e_study.pojo.dto.NetCourseExample" resultType="java.lang.Long">
     select count(*) from net_course
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -171,7 +171,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="cn.bestsort.e_study.dto.NetCourse">
+  <update id="updateByPrimaryKeySelective" parameterType="cn.bestsort.e_study.pojo.dto.NetCourse">
     update net_course
     <set>
       <if test="name != null">
@@ -186,7 +186,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="cn.bestsort.e_study.dto.NetCourse">
+  <update id="updateByPrimaryKey" parameterType="cn.bestsort.e_study.pojo.dto.NetCourse">
     update net_course
     set name = #{name,jdbcType=VARCHAR},
       description = #{description,jdbcType=VARCHAR},

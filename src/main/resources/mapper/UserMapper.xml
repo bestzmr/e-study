@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.bestsort.e_study.mapper.UserMapper">
-  <resultMap id="BaseResultMap" type="cn.bestsort.e_study.dto.User">
+  <resultMap id="BaseResultMap" type="cn.bestsort.e_study.pojo.dto.User">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="tel" jdbcType="VARCHAR" property="tel" />
     <result column="password" jdbcType="VARCHAR" property="password" />
@@ -9,7 +9,7 @@
     <result column="age" jdbcType="INTEGER" property="age" />
     <result column="sex" jdbcType="TINYINT" property="sex" />
     <result column="school" jdbcType="VARCHAR" property="school" />
-    <result column="class" jdbcType="INTEGER" property="class" />
+    <result column="user_class" jdbcType="INTEGER" property="userClass" />
     <result column="grade" jdbcType="REAL" property="grade" />
     <result column="is_admin" jdbcType="TINYINT" property="isAdmin" />
     <result column="we_chat" jdbcType="VARCHAR" property="weChat" />
@@ -75,10 +75,10 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, tel, password, name, age, sex, school, class, grade, is_admin, we_chat, parent_tel, 
-    parent_name
+    id, tel, password, name, age, sex, school, user_class, grade, is_admin, we_chat, 
+    parent_tel, parent_name
   </sql>
-  <select id="selectByExample" parameterType="cn.bestsort.e_study.dto.UserExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="cn.bestsort.e_study.pojo.dto.UserExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -102,25 +102,25 @@
     delete from user
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <delete id="deleteByExample" parameterType="cn.bestsort.e_study.dto.UserExample">
+  <delete id="deleteByExample" parameterType="cn.bestsort.e_study.pojo.dto.UserExample">
     delete from user
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="cn.bestsort.e_study.dto.User">
+  <insert id="insert" parameterType="cn.bestsort.e_study.pojo.dto.User">
     insert into user (id, tel, password, 
       name, age, sex, school, 
-      class, grade, is_admin, 
+      user_class, grade, is_admin, 
       we_chat, parent_tel, parent_name
       )
     values (#{id,jdbcType=BIGINT}, #{tel,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
       #{name,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER}, #{sex,jdbcType=TINYINT}, #{school,jdbcType=VARCHAR}, 
-      #{class,jdbcType=INTEGER}, #{grade,jdbcType=REAL}, #{isAdmin,jdbcType=TINYINT}, 
+      #{userClass,jdbcType=INTEGER}, #{grade,jdbcType=REAL}, #{isAdmin,jdbcType=TINYINT}, 
       #{weChat,jdbcType=VARCHAR}, #{parentTel,jdbcType=VARCHAR}, #{parentName,jdbcType=VARCHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="cn.bestsort.e_study.dto.User">
+  <insert id="insertSelective" parameterType="cn.bestsort.e_study.pojo.dto.User">
     insert into user
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -144,8 +144,8 @@
       <if test="school != null">
         school,
       </if>
-      <if test="class != null">
-        class,
+      <if test="userClass != null">
+        user_class,
       </if>
       <if test="grade != null">
         grade,
@@ -185,8 +185,8 @@
       <if test="school != null">
         #{school,jdbcType=VARCHAR},
       </if>
-      <if test="class != null">
-        #{class,jdbcType=INTEGER},
+      <if test="userClass != null">
+        #{userClass,jdbcType=INTEGER},
       </if>
       <if test="grade != null">
         #{grade,jdbcType=REAL},
@@ -205,7 +205,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="cn.bestsort.e_study.dto.UserExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="cn.bestsort.e_study.pojo.dto.UserExample" resultType="java.lang.Long">
     select count(*) from user
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -235,8 +235,8 @@
       <if test="record.school != null">
         school = #{record.school,jdbcType=VARCHAR},
       </if>
-      <if test="record.class != null">
-        class = #{record.class,jdbcType=INTEGER},
+      <if test="record.userClass != null">
+        user_class = #{record.userClass,jdbcType=INTEGER},
       </if>
       <if test="record.grade != null">
         grade = #{record.grade,jdbcType=REAL},
@@ -267,7 +267,7 @@
       age = #{record.age,jdbcType=INTEGER},
       sex = #{record.sex,jdbcType=TINYINT},
       school = #{record.school,jdbcType=VARCHAR},
-      class = #{record.class,jdbcType=INTEGER},
+      user_class = #{record.userClass,jdbcType=INTEGER},
       grade = #{record.grade,jdbcType=REAL},
       is_admin = #{record.isAdmin,jdbcType=TINYINT},
       we_chat = #{record.weChat,jdbcType=VARCHAR},
@@ -277,7 +277,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="cn.bestsort.e_study.dto.User">
+  <update id="updateByPrimaryKeySelective" parameterType="cn.bestsort.e_study.pojo.dto.User">
     update user
     <set>
       <if test="tel != null">
@@ -298,8 +298,8 @@
       <if test="school != null">
         school = #{school,jdbcType=VARCHAR},
       </if>
-      <if test="class != null">
-        class = #{class,jdbcType=INTEGER},
+      <if test="userClass != null">
+        user_class = #{userClass,jdbcType=INTEGER},
       </if>
       <if test="grade != null">
         grade = #{grade,jdbcType=REAL},
@@ -319,7 +319,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="cn.bestsort.e_study.dto.User">
+  <update id="updateByPrimaryKey" parameterType="cn.bestsort.e_study.pojo.dto.User">
     update user
     set tel = #{tel,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR},
@@ -327,7 +327,7 @@
       age = #{age,jdbcType=INTEGER},
       sex = #{sex,jdbcType=TINYINT},
       school = #{school,jdbcType=VARCHAR},
-      class = #{class,jdbcType=INTEGER},
+      user_class = #{userClass,jdbcType=INTEGER},
       grade = #{grade,jdbcType=REAL},
       is_admin = #{isAdmin,jdbcType=TINYINT},
       we_chat = #{weChat,jdbcType=VARCHAR},

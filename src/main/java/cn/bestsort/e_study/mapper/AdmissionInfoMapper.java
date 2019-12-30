@@ -1,7 +1,7 @@
 package cn.bestsort.e_study.mapper;
 
-import cn.bestsort.e_study.dto.AdmissionInfo;
-import cn.bestsort.e_study.dto.AdmissionInfoExample;
+import cn.bestsort.e_study.pojo.dto.AdmissionInfo;
+import cn.bestsort.e_study.pojo.dto.AdmissionInfoExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

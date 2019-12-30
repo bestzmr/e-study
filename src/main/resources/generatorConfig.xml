@@ -24,7 +24,7 @@
             <property name="forceBigDecimals" value="false" />
         </javaTypeResolver>
 
-        <javaModelGenerator targetPackage="cn.bestsort.e_study.dto" targetProject="src/main/java">
+        <javaModelGenerator targetPackage="cn.bestsort.e_study.pojo.dto" targetProject="src/main/java">
             <property name="enableSubPackages" value="true" />
             <property name="trimStrings" value="true" />
         </javaModelGenerator>

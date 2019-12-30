@@ -12,8 +12,8 @@
 
         <!-- 数据库配置  -->
         <jdbc.url>jdbc:mysql://localhost:3306/e_study?serverTimezone=UTC&amp;useUnicode=true&amp;characterEncoding=UTF-8</jdbc.url>
-        <jdbc.user>admin</jdbc.user>
-        <jdbc.passwd>AdminPassword</jdbc.passwd>
+        <jdbc.user>root</jdbc.user>
+        <jdbc.passwd>123456</jdbc.passwd>
     </properties>
 
     <groupId>cn.bestsort</groupId>

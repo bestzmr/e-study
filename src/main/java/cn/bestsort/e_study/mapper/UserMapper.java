@@ -1,15 +1,7 @@
 package cn.bestsort.e_study.mapper;
 
-<<<<<<< HEAD
-/**
- * @Author zhaoqiang
- * @Date 2019/12/30 8:55
- */
-public interface UserMapper {
-}
-=======
-import cn.bestsort.e_study.dto.User;
-import cn.bestsort.e_study.dto.UserExample;
+import cn.bestsort.e_study.pojo.dto.User;
+import cn.bestsort.e_study.pojo.dto.UserExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
@@ -36,4 +28,3 @@ public interface UserMapper {
 
     int updateByPrimaryKey(User record);
 }
->>>>>>> origin/master

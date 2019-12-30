@@ -1,7 +1,7 @@
 package cn.bestsort.e_study.mapper;
 
-import cn.bestsort.e_study.dto.NetCourse;
-import cn.bestsort.e_study.dto.NetCourseExample;
+import cn.bestsort.e_study.pojo.dto.NetCourse;
+import cn.bestsort.e_study.pojo.dto.NetCourseExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
