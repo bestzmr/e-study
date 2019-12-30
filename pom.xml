@@ -12,8 +12,8 @@
 
         <!-- 数据库配置  -->
         <jdbc.url>jdbc:mysql://localhost:3306/e_study?serverTimezone=UTC&amp;useUnicode=true&amp;characterEncoding=UTF-8</jdbc.url>
-        <jdbc.user>root</jdbc.user>
-        <jdbc.passwd>123456</jdbc.passwd>
+        <jdbc.user>admin</jdbc.user>
+        <jdbc.passwd>AdminPassword</jdbc.passwd>
     </properties>
 
     <groupId>cn.bestsort</groupId>
@@ -138,6 +138,17 @@
                         <version>8.0.17</version>
                     </dependency>
                 </dependencies>
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
             <plugin>
                 <configuration>

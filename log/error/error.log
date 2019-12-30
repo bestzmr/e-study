@@ -724,3 +724,17 @@ Caused by: java.io.FileNotFoundException: class path resource [class] cannot be 
 [2m2019-12-30 14:55:01.004[0;39m [31mERROR[0;39m [35m769[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mcn.bestsort.e_study.config.WebMvcConfig [0;39m [2m:[0;39m 自动打开页面失败，请手动打开浏览器
 [2m2019-12-30 14:55:32.676[0;39m [31mERROR[0;39m [35m1477[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mcn.bestsort.e_study.config.WebMvcConfig [0;39m [2m:[0;39m 自动打开页面失败，请手动打开浏览器
 >>>>>>> 60b12a8acece3ea56d399a2f7150e7a77f5d6ef8
+2019-12-30 15:21:29.795 ERROR 4265 --- [  restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The Tomcat connector configured to listen on port 8080 failed to start. The port may already be in use or the connector may be misconfigured.
+
+Action:
+
+Verify the connector's configuration, identify and stop any process that's listening on port 8080, or configure this application to listen on another port.
+
