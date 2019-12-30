@@ -21,3 +21,5 @@ spring:
           - cn.bestsort.bbslite.manager.*
 logging:
   path: log
+spring.mvc.view.prefix: /WEB-INF/JSP/
+spring.mvc.view.suffix: .jsp
