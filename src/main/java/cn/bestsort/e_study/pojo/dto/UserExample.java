@@ -1,4 +1,4 @@
-package cn.bestsort.e_study.dto;
+package cn.bestsort.e_study.pojo.dto;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -564,63 +564,63 @@ public class UserExample {
             return (Criteria) this;
         }
 
-        public Criteria andClassIsNull() {
-            addCriterion("class is null");
+        public Criteria andUserClassIsNull() {
+            addCriterion("user_class is null");
             return (Criteria) this;
         }
 
-        public Criteria andClassIsNotNull() {
-            addCriterion("class is not null");
+        public Criteria andUserClassIsNotNull() {
+            addCriterion("user_class is not null");
             return (Criteria) this;
         }
 
-        public Criteria andClassEqualTo(Integer value) {
-            addCriterion("class =", value, "class");
+        public Criteria andUserClassEqualTo(Integer value) {
+            addCriterion("user_class =", value, "userClass");
             return (Criteria) this;
         }
 
-        public Criteria andClassNotEqualTo(Integer value) {
-            addCriterion("class <>", value, "class");
+        public Criteria andUserClassNotEqualTo(Integer value) {
+            addCriterion("user_class <>", value, "userClass");
             return (Criteria) this;
         }
 
-        public Criteria andClassGreaterThan(Integer value) {
-            addCriterion("class >", value, "class");
+        public Criteria andUserClassGreaterThan(Integer value) {
+            addCriterion("user_class >", value, "userClass");
             return (Criteria) this;
         }
 
-        public Criteria andClassGreaterThanOrEqualTo(Integer value) {
-            addCriterion("class >=", value, "class");
+        public Criteria andUserClassGreaterThanOrEqualTo(Integer value) {
+            addCriterion("user_class >=", value, "userClass");
             return (Criteria) this;
         }
 
-        public Criteria andClassLessThan(Integer value) {
-            addCriterion("class <", value, "class");
+        public Criteria andUserClassLessThan(Integer value) {
+            addCriterion("user_class <", value, "userClass");
             return (Criteria) this;
         }
 
-        public Criteria andClassLessThanOrEqualTo(Integer value) {
-            addCriterion("class <=", value, "class");
+        public Criteria andUserClassLessThanOrEqualTo(Integer value) {
+            addCriterion("user_class <=", value, "userClass");
             return (Criteria) this;
         }
 
-        public Criteria andClassIn(List<Integer> values) {
-            addCriterion("class in", values, "class");
+        public Criteria andUserClassIn(List<Integer> values) {
+            addCriterion("user_class in", values, "userClass");
             return (Criteria) this;
         }
 
-        public Criteria andClassNotIn(List<Integer> values) {
-            addCriterion("class not in", values, "class");
+        public Criteria andUserClassNotIn(List<Integer> values) {
+            addCriterion("user_class not in", values, "userClass");
             return (Criteria) this;
         }
 
-        public Criteria andClassBetween(Integer value1, Integer value2) {
-            addCriterion("class between", value1, value2, "class");
+        public Criteria andUserClassBetween(Integer value1, Integer value2) {
+            addCriterion("user_class between", value1, value2, "userClass");
             return (Criteria) this;
         }
 
-        public Criteria andClassNotBetween(Integer value1, Integer value2) {
-            addCriterion("class not between", value1, value2, "class");
+        public Criteria andUserClassNotBetween(Integer value1, Integer value2) {
+            addCriterion("user_class not between", value1, value2, "userClass");
             return (Criteria) this;
         }
 

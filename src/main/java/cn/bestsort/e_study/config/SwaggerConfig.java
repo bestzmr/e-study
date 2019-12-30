@@ -57,7 +57,7 @@ public class SwaggerConfig {
                 "api网站：http://localhost:8080/swagger-ui.html#/，欢迎大家访问。",
                 "API V1.0",
                 "Terms of service",
-                new Contact("名字想好没", "https://itweknow.cn", "gancy.programmer@gmail.com"),
+                new Contact("E学网报名平台", " ---  ", "  ---  "),
                 "Apache", "http://www.apache.org/", Collections.emptyList());
     }
 }

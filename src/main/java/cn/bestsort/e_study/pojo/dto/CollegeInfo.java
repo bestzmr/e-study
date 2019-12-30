@@ -1,13 +1,13 @@
-package cn.bestsort.e_study.dto;
+package cn.bestsort.e_study.pojo.dto;
 
-public class NetCourse {
+public class CollegeInfo {
     private Long id;
 
-    private String name;
-
-    private String description;
+    private Byte type;
 
     private String url;
+
+    private String description;
 
     public Long getId() {
         return id;
@@ -17,20 +17,12 @@ public class NetCourse {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public Byte getType() {
+        return type;
     }
 
-    public void setName(String name) {
-        this.name = name == null ? null : name.trim();
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description == null ? null : description.trim();
+    public void setType(Byte type) {
+        this.type = type;
     }
 
     public String getUrl() {
@@ -41,6 +33,14 @@ public class NetCourse {
         this.url = url == null ? null : url.trim();
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description == null ? null : description.trim();
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -48,9 +48,9 @@ public class NetCourse {
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
         sb.append(", id=").append(id);
-        sb.append(", name=").append(name);
-        sb.append(", description=").append(description);
+        sb.append(", type=").append(type);
         sb.append(", url=").append(url);
+        sb.append(", description=").append(description);
         sb.append("]");
         return sb.toString();
     }

@@ -1,4 +1,4 @@
-package cn.bestsort.e_study.dto;
+package cn.bestsort.e_study.pojo.dto;
 
 public class SelectCourse {
     private Long id;

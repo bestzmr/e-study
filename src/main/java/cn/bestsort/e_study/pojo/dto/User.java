@@ -1,4 +1,4 @@
-package cn.bestsort.e_study.dto;
+package cn.bestsort.e_study.pojo.dto;
 
 public class User {
     private Long id;
@@ -15,7 +15,7 @@ public class User {
 
     private String school;
 
-    private Integer class;
+    private Integer userClass;
 
     private Float grade;
 
@@ -83,12 +83,12 @@ public class User {
         this.school = school == null ? null : school.trim();
     }
 
-    public Integer getClass() {
-        return class;
+    public Integer getUserClass() {
+        return userClass;
     }
 
-    public void setClass(Integer class) {
-        this.class = class;
+    public void setUserClass(Integer userClass) {
+        this.userClass = userClass;
     }
 
     public Float getGrade() {
@@ -144,7 +144,7 @@ public class User {
         sb.append(", age=").append(age);
         sb.append(", sex=").append(sex);
         sb.append(", school=").append(school);
-        sb.append(", class=").append(class);
+        sb.append(", userClass=").append(userClass);
         sb.append(", grade=").append(grade);
         sb.append(", isAdmin=").append(isAdmin);
         sb.append(", weChat=").append(weChat);

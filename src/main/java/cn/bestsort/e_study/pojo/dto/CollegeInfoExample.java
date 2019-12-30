@@ -1,16 +1,16 @@
-package cn.bestsort.e_study.dto;
+package cn.bestsort.e_study.pojo.dto;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class AdmissionInfoExample {
+public class CollegeInfoExample {
     protected String orderByClause;
 
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
 
-    public AdmissionInfoExample() {
+    public CollegeInfoExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 
@@ -164,263 +164,203 @@ public class AdmissionInfoExample {
             return (Criteria) this;
         }
 
-        public Criteria andScoreIsNull() {
-            addCriterion("score is null");
+        public Criteria andTypeIsNull() {
+            addCriterion("type is null");
             return (Criteria) this;
         }
 
-        public Criteria andScoreIsNotNull() {
-            addCriterion("score is not null");
+        public Criteria andTypeIsNotNull() {
+            addCriterion("type is not null");
             return (Criteria) this;
         }
 
-        public Criteria andScoreEqualTo(Integer value) {
-            addCriterion("score =", value, "score");
+        public Criteria andTypeEqualTo(Byte value) {
+            addCriterion("type =", value, "type");
             return (Criteria) this;
         }
 
-        public Criteria andScoreNotEqualTo(Integer value) {
-            addCriterion("score <>", value, "score");
+        public Criteria andTypeNotEqualTo(Byte value) {
+            addCriterion("type <>", value, "type");
             return (Criteria) this;
         }
 
-        public Criteria andScoreGreaterThan(Integer value) {
-            addCriterion("score >", value, "score");
+        public Criteria andTypeGreaterThan(Byte value) {
+            addCriterion("type >", value, "type");
             return (Criteria) this;
         }
 
-        public Criteria andScoreGreaterThanOrEqualTo(Integer value) {
-            addCriterion("score >=", value, "score");
+        public Criteria andTypeGreaterThanOrEqualTo(Byte value) {
+            addCriterion("type >=", value, "type");
             return (Criteria) this;
         }
 
-        public Criteria andScoreLessThan(Integer value) {
-            addCriterion("score <", value, "score");
+        public Criteria andTypeLessThan(Byte value) {
+            addCriterion("type <", value, "type");
             return (Criteria) this;
         }
 
-        public Criteria andScoreLessThanOrEqualTo(Integer value) {
-            addCriterion("score <=", value, "score");
+        public Criteria andTypeLessThanOrEqualTo(Byte value) {
+            addCriterion("type <=", value, "type");
             return (Criteria) this;
         }
 
-        public Criteria andScoreIn(List<Integer> values) {
-            addCriterion("score in", values, "score");
+        public Criteria andTypeIn(List<Byte> values) {
+            addCriterion("type in", values, "type");
             return (Criteria) this;
         }
 
-        public Criteria andScoreNotIn(List<Integer> values) {
-            addCriterion("score not in", values, "score");
+        public Criteria andTypeNotIn(List<Byte> values) {
+            addCriterion("type not in", values, "type");
             return (Criteria) this;
         }
 
-        public Criteria andScoreBetween(Integer value1, Integer value2) {
-            addCriterion("score between", value1, value2, "score");
+        public Criteria andTypeBetween(Byte value1, Byte value2) {
+            addCriterion("type between", value1, value2, "type");
             return (Criteria) this;
         }
 
-        public Criteria andScoreNotBetween(Integer value1, Integer value2) {
-            addCriterion("score not between", value1, value2, "score");
+        public Criteria andTypeNotBetween(Byte value1, Byte value2) {
+            addCriterion("type not between", value1, value2, "type");
             return (Criteria) this;
         }
 
-        public Criteria andPolicyIsNull() {
-            addCriterion("policy is null");
+        public Criteria andUrlIsNull() {
+            addCriterion("url is null");
             return (Criteria) this;
         }
 
-        public Criteria andPolicyIsNotNull() {
-            addCriterion("policy is not null");
+        public Criteria andUrlIsNotNull() {
+            addCriterion("url is not null");
             return (Criteria) this;
         }
 
-        public Criteria andPolicyEqualTo(String value) {
-            addCriterion("policy =", value, "policy");
+        public Criteria andUrlEqualTo(String value) {
+            addCriterion("url =", value, "url");
             return (Criteria) this;
         }
 
-        public Criteria andPolicyNotEqualTo(String value) {
-            addCriterion("policy <>", value, "policy");
+        public Criteria andUrlNotEqualTo(String value) {
+            addCriterion("url <>", value, "url");
             return (Criteria) this;
         }
 
-        public Criteria andPolicyGreaterThan(String value) {
-            addCriterion("policy >", value, "policy");
+        public Criteria andUrlGreaterThan(String value) {
+            addCriterion("url >", value, "url");
             return (Criteria) this;
         }
 
-        public Criteria andPolicyGreaterThanOrEqualTo(String value) {
-            addCriterion("policy >=", value, "policy");
+        public Criteria andUrlGreaterThanOrEqualTo(String value) {
+            addCriterion("url >=", value, "url");
             return (Criteria) this;
         }
 
-        public Criteria andPolicyLessThan(String value) {
-            addCriterion("policy <", value, "policy");
+        public Criteria andUrlLessThan(String value) {
+            addCriterion("url <", value, "url");
             return (Criteria) this;
         }
 
-        public Criteria andPolicyLessThanOrEqualTo(String value) {
-            addCriterion("policy <=", value, "policy");
+        public Criteria andUrlLessThanOrEqualTo(String value) {
+            addCriterion("url <=", value, "url");
             return (Criteria) this;
         }
 
-        public Criteria andPolicyLike(String value) {
-            addCriterion("policy like", value, "policy");
+        public Criteria andUrlLike(String value) {
+            addCriterion("url like", value, "url");
             return (Criteria) this;
         }
 
-        public Criteria andPolicyNotLike(String value) {
-            addCriterion("policy not like", value, "policy");
+        public Criteria andUrlNotLike(String value) {
+            addCriterion("url not like", value, "url");
             return (Criteria) this;
         }
 
-        public Criteria andPolicyIn(List<String> values) {
-            addCriterion("policy in", values, "policy");
+        public Criteria andUrlIn(List<String> values) {
+            addCriterion("url in", values, "url");
             return (Criteria) this;
         }
 
-        public Criteria andPolicyNotIn(List<String> values) {
-            addCriterion("policy not in", values, "policy");
+        public Criteria andUrlNotIn(List<String> values) {
+            addCriterion("url not in", values, "url");
             return (Criteria) this;
         }
 
-        public Criteria andPolicyBetween(String value1, String value2) {
-            addCriterion("policy between", value1, value2, "policy");
+        public Criteria andUrlBetween(String value1, String value2) {
+            addCriterion("url between", value1, value2, "url");
             return (Criteria) this;
         }
 
-        public Criteria andPolicyNotBetween(String value1, String value2) {
-            addCriterion("policy not between", value1, value2, "policy");
+        public Criteria andUrlNotBetween(String value1, String value2) {
+            addCriterion("url not between", value1, value2, "url");
             return (Criteria) this;
         }
 
-        public Criteria andPolicyDescriptionIsNull() {
-            addCriterion("policy_description is null");
+        public Criteria andDescriptionIsNull() {
+            addCriterion("description is null");
             return (Criteria) this;
         }
 
-        public Criteria andPolicyDescriptionIsNotNull() {
-            addCriterion("policy_description is not null");
+        public Criteria andDescriptionIsNotNull() {
+            addCriterion("description is not null");
             return (Criteria) this;
         }
 
-        public Criteria andPolicyDescriptionEqualTo(String value) {
-            addCriterion("policy_description =", value, "policyDescription");
+        public Criteria andDescriptionEqualTo(String value) {
+            addCriterion("description =", value, "description");
             return (Criteria) this;
         }
 
-        public Criteria andPolicyDescriptionNotEqualTo(String value) {
-            addCriterion("policy_description <>", value, "policyDescription");
+        public Criteria andDescriptionNotEqualTo(String value) {
+            addCriterion("description <>", value, "description");
             return (Criteria) this;
         }
 
-        public Criteria andPolicyDescriptionGreaterThan(String value) {
-            addCriterion("policy_description >", value, "policyDescription");
+        public Criteria andDescriptionGreaterThan(String value) {
+            addCriterion("description >", value, "description");
             return (Criteria) this;
         }
 
-        public Criteria andPolicyDescriptionGreaterThanOrEqualTo(String value) {
-            addCriterion("policy_description >=", value, "policyDescription");
+        public Criteria andDescriptionGreaterThanOrEqualTo(String value) {
+            addCriterion("description >=", value, "description");
             return (Criteria) this;
         }
 
-        public Criteria andPolicyDescriptionLessThan(String value) {
-            addCriterion("policy_description <", value, "policyDescription");
+        public Criteria andDescriptionLessThan(String value) {
+            addCriterion("description <", value, "description");
             return (Criteria) this;
         }
 
-        public Criteria andPolicyDescriptionLessThanOrEqualTo(String value) {
-            addCriterion("policy_description <=", value, "policyDescription");
+        public Criteria andDescriptionLessThanOrEqualTo(String value) {
+            addCriterion("description <=", value, "description");
             return (Criteria) this;
         }
 
-        public Criteria andPolicyDescriptionLike(String value) {
-            addCriterion("policy_description like", value, "policyDescription");
+        public Criteria andDescriptionLike(String value) {
+            addCriterion("description like", value, "description");
             return (Criteria) this;
         }
 
-        public Criteria andPolicyDescriptionNotLike(String value) {
-            addCriterion("policy_description not like", value, "policyDescription");
+        public Criteria andDescriptionNotLike(String value) {
+            addCriterion("description not like", value, "description");
             return (Criteria) this;
         }
 
-        public Criteria andPolicyDescriptionIn(List<String> values) {
-            addCriterion("policy_description in", values, "policyDescription");
+        public Criteria andDescriptionIn(List<String> values) {
+            addCriterion("description in", values, "description");
             return (Criteria) this;
         }
 
-        public Criteria andPolicyDescriptionNotIn(List<String> values) {
-            addCriterion("policy_description not in", values, "policyDescription");
+        public Criteria andDescriptionNotIn(List<String> values) {
+            addCriterion("description not in", values, "description");
             return (Criteria) this;
         }
 
-        public Criteria andPolicyDescriptionBetween(String value1, String value2) {
-            addCriterion("policy_description between", value1, value2, "policyDescription");
+        public Criteria andDescriptionBetween(String value1, String value2) {
+            addCriterion("description between", value1, value2, "description");
             return (Criteria) this;
         }
 
-        public Criteria andPolicyDescriptionNotBetween(String value1, String value2) {
-            addCriterion("policy_description not between", value1, value2, "policyDescription");
-            return (Criteria) this;
-        }
-
-        public Criteria andSchoolYearIsNull() {
-            addCriterion("school_year is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andSchoolYearIsNotNull() {
-            addCriterion("school_year is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andSchoolYearEqualTo(Integer value) {
-            addCriterion("school_year =", value, "schoolYear");
-            return (Criteria) this;
-        }
-
-        public Criteria andSchoolYearNotEqualTo(Integer value) {
-            addCriterion("school_year <>", value, "schoolYear");
-            return (Criteria) this;
-        }
-
-        public Criteria andSchoolYearGreaterThan(Integer value) {
-            addCriterion("school_year >", value, "schoolYear");
-            return (Criteria) this;
-        }
-
-        public Criteria andSchoolYearGreaterThanOrEqualTo(Integer value) {
-            addCriterion("school_year >=", value, "schoolYear");
-            return (Criteria) this;
-        }
-
-        public Criteria andSchoolYearLessThan(Integer value) {
-            addCriterion("school_year <", value, "schoolYear");
-            return (Criteria) this;
-        }
-
-        public Criteria andSchoolYearLessThanOrEqualTo(Integer value) {
-            addCriterion("school_year <=", value, "schoolYear");
-            return (Criteria) this;
-        }
-
-        public Criteria andSchoolYearIn(List<Integer> values) {
-            addCriterion("school_year in", values, "schoolYear");
-            return (Criteria) this;
-        }
-
-        public Criteria andSchoolYearNotIn(List<Integer> values) {
-            addCriterion("school_year not in", values, "schoolYear");
-            return (Criteria) this;
-        }
-
-        public Criteria andSchoolYearBetween(Integer value1, Integer value2) {
-            addCriterion("school_year between", value1, value2, "schoolYear");
-            return (Criteria) this;
-        }
-
-        public Criteria andSchoolYearNotBetween(Integer value1, Integer value2) {
-            addCriterion("school_year not between", value1, value2, "schoolYear");
+        public Criteria andDescriptionNotBetween(String value1, String value2) {
+            addCriterion("description not between", value1, value2, "description");
             return (Criteria) this;
         }
     }
