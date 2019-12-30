@@ -5,7 +5,7 @@
 
 1. 先克隆仓库到本地
 ```bash
-git clone https://github.com/AngryMerlin/esw-swagger.git
+git clone https://github.com/AngryMerlin/e-study.git
 ```
 2. 以下操作二选一：
     1. 将`pom.xml`中的数据库链接修改为自己本地数据库的链接、用户名、密码

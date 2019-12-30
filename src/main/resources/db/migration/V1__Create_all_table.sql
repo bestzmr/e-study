@@ -7,7 +7,7 @@ create table user(
     sex tinyint not null ,
     school varchar(20),
     class int,
-    grade int,
+    grade float ,
     /* 用户类型: 教师,学生 */
     is_admin tinyint default 0,
     we_chat varchar(20) not null,
@@ -61,8 +61,9 @@ create table high_school_info(
 create table admission_info(
     id bigint auto_increment primary key ,
     score int not null ,
-    /* 政策 */
+    /* 政策 -> 文件地址 */
     policy varchar(200),
+    policy_description varchar(1000),
     /* 学年 */
     school_year int not null
-)
+);
