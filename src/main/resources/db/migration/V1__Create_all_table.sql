@@ -32,6 +32,7 @@ create table course(
 create table teacher_show(
     id bigint auto_increment primary key ,
     title varchar(50) not null ,
+    description varchar(1000) not null ,
     /* 编辑 */
     editor varchar(5),
     /* 作者 */

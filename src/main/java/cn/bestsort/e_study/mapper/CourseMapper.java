@@ -1,9 +1,8 @@
 package cn.bestsort.e_study.mapper;
 
-import java.util.List;
-
 import cn.bestsort.e_study.pojo.dto.Course;
 import cn.bestsort.e_study.pojo.dto.CourseExample;
+import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 public interface CourseMapper {

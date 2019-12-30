@@ -7,6 +7,8 @@ public class TeacherShow {
 
     private String title;
 
+    private String description;
+
     private String editor;
 
     private String author;
@@ -29,6 +31,14 @@ public class TeacherShow {
 
     public void setTitle(String title) {
         this.title = title == null ? null : title.trim();
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description == null ? null : description.trim();
     }
 
     public String getEditor() {
@@ -71,6 +81,7 @@ public class TeacherShow {
         sb.append("Hash = ").append(hashCode());
         sb.append(", id=").append(id);
         sb.append(", title=").append(title);
+        sb.append(", description=").append(description);
         sb.append(", editor=").append(editor);
         sb.append(", author=").append(author);
         sb.append(", gmtCreate=").append(gmtCreate);

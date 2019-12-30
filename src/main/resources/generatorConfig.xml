@@ -24,9 +24,11 @@
             <property name="forceBigDecimals" value="false" />
         </javaTypeResolver>
 
+        <!-- 实体生成 -->
         <javaModelGenerator targetPackage="cn.bestsort.e_study.pojo.dto" targetProject="src/main/java">
             <property name="enableSubPackages" value="true" />
             <property name="trimStrings" value="true" />
+
         </javaModelGenerator>
 
         <sqlMapGenerator targetPackage="mapper"  targetProject="src/main/resources">
@@ -36,14 +38,14 @@
         <javaClientGenerator type="XMLMAPPER" targetPackage="cn.bestsort.e_study.mapper" targetProject="src/main/java">
             <property name="enableSubPackages" value="true" />
         </javaClientGenerator>
-        <table tableName="admission_info" domainObjectName="AdmissionInfo"/>
-        <table tableName="college_info" domainObjectName="CollegeInfo"/>
-        <table tableName="course" domainObjectName="Course"/>
-        <table tableName="high_school_info" domainObjectName="HighSchoolInfo"/>
-        <table tableName="net_course" domainObjectName="NetCourse"/>
-        <table tableName="select_course" domainObjectName="SelectCourse"/>
-        <table tableName="teacher_show" domainObjectName="TeacherShow"/>
-        <table tableName="user" domainObjectName="User"/>
+        <table tableName="admission_info"/>
+        <table tableName="college_info"/>
+        <table tableName="course"/>
+        <table tableName="high_school_info"/>
+        <table tableName="net_course"/>
+        <table tableName="select_course"/>
+        <table tableName="teacher_show"/>
+        <table tableName="user"/>
 
     </context>
 </generatorConfiguration>

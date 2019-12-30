@@ -23,8 +23,7 @@ public class WebMvcConfig {
         try {
             runtime.exec("rundll32 url.dll,FileProtocolHandler " + url);
         } catch (IOException e) {
-            e.printStackTrace();
+            log.error("自动打开页面失败，请手动打开浏览器");
         }
-
     }
 }

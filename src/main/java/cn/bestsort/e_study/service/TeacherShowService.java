@@ -1,11 +1,10 @@
 package cn.bestsort.e_study.service;
 
 import cn.bestsort.e_study.mapper.TeacherShowMapper;
-
-
 import cn.bestsort.e_study.pojo.dto.TeacherShow;
 import cn.bestsort.e_study.pojo.dto.TeacherShowExample;
 import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -29,9 +28,9 @@ public class TeacherShowService {
      * @param pageSize 每一页数据量
      * @return List
      */
-    public List<TeacherShow>listTeacherShows(int pageNo, int pageSize){
+    public PageInfo<TeacherShow>listTeacherShows(int pageNo, int pageSize){
         PageHelper.startPage(pageNo,pageSize);
-        return teacherShowMapper.selectByExample(new TeacherShowExample());
+        return new PageInfo<>(teacherShowMapper.selectByExample(new TeacherShowExample()));
     }
 
     /**
