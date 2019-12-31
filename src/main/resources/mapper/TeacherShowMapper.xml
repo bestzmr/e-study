@@ -9,6 +9,7 @@
     <result column="author" jdbcType="VARCHAR" property="author" />
     <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
     <result column="page_view" jdbcType="BIGINT" property="pageView" />
+    <result column="title_img" jdbcType="VARCHAR" property="titleImg" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -69,7 +70,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, title, description, editor, author, gmt_create, page_view
+    id, title, description, editor, author, gmt_create, page_view, title_img
   </sql>
   <select id="selectByExample" parameterType="cn.bestsort.e_study.pojo.dto.TeacherShowExample" resultMap="BaseResultMap">
     select
@@ -104,10 +105,10 @@
   <insert id="insert" parameterType="cn.bestsort.e_study.pojo.dto.TeacherShow">
     insert into teacher_show (id, title, description, 
       editor, author, gmt_create, 
-      page_view)
+      page_view, title_img)
     values (#{id,jdbcType=BIGINT}, #{title,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, 
       #{editor,jdbcType=VARCHAR}, #{author,jdbcType=VARCHAR}, #{gmtCreate,jdbcType=TIMESTAMP}, 
-      #{pageView,jdbcType=BIGINT})
+      #{pageView,jdbcType=BIGINT}, #{titleImg,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="cn.bestsort.e_study.pojo.dto.TeacherShow">
     insert into teacher_show
@@ -133,6 +134,9 @@
       <if test="pageView != null">
         page_view,
       </if>
+      <if test="titleImg != null">
+        title_img,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -155,6 +159,9 @@
       </if>
       <if test="pageView != null">
         #{pageView,jdbcType=BIGINT},
+      </if>
+      <if test="titleImg != null">
+        #{titleImg,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -188,6 +195,9 @@
       <if test="record.pageView != null">
         page_view = #{record.pageView,jdbcType=BIGINT},
       </if>
+      <if test="record.titleImg != null">
+        title_img = #{record.titleImg,jdbcType=VARCHAR},
+      </if>
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -201,7 +211,8 @@
       editor = #{record.editor,jdbcType=VARCHAR},
       author = #{record.author,jdbcType=VARCHAR},
       gmt_create = #{record.gmtCreate,jdbcType=TIMESTAMP},
-      page_view = #{record.pageView,jdbcType=BIGINT}
+      page_view = #{record.pageView,jdbcType=BIGINT},
+      title_img = #{record.titleImg,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -227,6 +238,9 @@
       <if test="pageView != null">
         page_view = #{pageView,jdbcType=BIGINT},
       </if>
+      <if test="titleImg != null">
+        title_img = #{titleImg,jdbcType=VARCHAR},
+      </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
@@ -237,7 +251,8 @@
       editor = #{editor,jdbcType=VARCHAR},
       author = #{author,jdbcType=VARCHAR},
       gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
-      page_view = #{pageView,jdbcType=BIGINT}
+      page_view = #{pageView,jdbcType=BIGINT},
+      title_img = #{titleImg,jdbcType=VARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>

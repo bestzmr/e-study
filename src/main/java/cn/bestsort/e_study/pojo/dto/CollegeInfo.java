@@ -3,11 +3,17 @@ package cn.bestsort.e_study.pojo.dto;
 public class CollegeInfo {
     private Long id;
 
-    private Byte type;
-
     private String url;
 
     private String description;
+
+    private Byte isDoubleFirst;
+
+    private Byte isKey;
+
+    private Byte isUndergraduate;
+
+    private Byte isArt;
 
     public Long getId() {
         return id;
@@ -15,14 +21,6 @@ public class CollegeInfo {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Byte getType() {
-        return type;
-    }
-
-    public void setType(Byte type) {
-        this.type = type;
     }
 
     public String getUrl() {
@@ -41,6 +39,38 @@ public class CollegeInfo {
         this.description = description == null ? null : description.trim();
     }
 
+    public Byte getIsDoubleFirst() {
+        return isDoubleFirst;
+    }
+
+    public void setIsDoubleFirst(Byte isDoubleFirst) {
+        this.isDoubleFirst = isDoubleFirst;
+    }
+
+    public Byte getIsKey() {
+        return isKey;
+    }
+
+    public void setIsKey(Byte isKey) {
+        this.isKey = isKey;
+    }
+
+    public Byte getIsUndergraduate() {
+        return isUndergraduate;
+    }
+
+    public void setIsUndergraduate(Byte isUndergraduate) {
+        this.isUndergraduate = isUndergraduate;
+    }
+
+    public Byte getIsArt() {
+        return isArt;
+    }
+
+    public void setIsArt(Byte isArt) {
+        this.isArt = isArt;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -48,9 +78,12 @@ public class CollegeInfo {
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
         sb.append(", id=").append(id);
-        sb.append(", type=").append(type);
         sb.append(", url=").append(url);
         sb.append(", description=").append(description);
+        sb.append(", isDoubleFirst=").append(isDoubleFirst);
+        sb.append(", isKey=").append(isKey);
+        sb.append(", isUndergraduate=").append(isUndergraduate);
+        sb.append(", isArt=").append(isArt);
         sb.append("]");
         return sb.toString();
     }

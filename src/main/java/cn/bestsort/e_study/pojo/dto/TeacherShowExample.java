@@ -564,6 +564,76 @@ public class TeacherShowExample {
             addCriterion("page_view not between", value1, value2, "pageView");
             return (Criteria) this;
         }
+
+        public Criteria andTitleImgIsNull() {
+            addCriterion("title_img is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andTitleImgIsNotNull() {
+            addCriterion("title_img is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andTitleImgEqualTo(String value) {
+            addCriterion("title_img =", value, "titleImg");
+            return (Criteria) this;
+        }
+
+        public Criteria andTitleImgNotEqualTo(String value) {
+            addCriterion("title_img <>", value, "titleImg");
+            return (Criteria) this;
+        }
+
+        public Criteria andTitleImgGreaterThan(String value) {
+            addCriterion("title_img >", value, "titleImg");
+            return (Criteria) this;
+        }
+
+        public Criteria andTitleImgGreaterThanOrEqualTo(String value) {
+            addCriterion("title_img >=", value, "titleImg");
+            return (Criteria) this;
+        }
+
+        public Criteria andTitleImgLessThan(String value) {
+            addCriterion("title_img <", value, "titleImg");
+            return (Criteria) this;
+        }
+
+        public Criteria andTitleImgLessThanOrEqualTo(String value) {
+            addCriterion("title_img <=", value, "titleImg");
+            return (Criteria) this;
+        }
+
+        public Criteria andTitleImgLike(String value) {
+            addCriterion("title_img like", value, "titleImg");
+            return (Criteria) this;
+        }
+
+        public Criteria andTitleImgNotLike(String value) {
+            addCriterion("title_img not like", value, "titleImg");
+            return (Criteria) this;
+        }
+
+        public Criteria andTitleImgIn(List<String> values) {
+            addCriterion("title_img in", values, "titleImg");
+            return (Criteria) this;
+        }
+
+        public Criteria andTitleImgNotIn(List<String> values) {
+            addCriterion("title_img not in", values, "titleImg");
+            return (Criteria) this;
+        }
+
+        public Criteria andTitleImgBetween(String value1, String value2) {
+            addCriterion("title_img between", value1, value2, "titleImg");
+            return (Criteria) this;
+        }
+
+        public Criteria andTitleImgNotBetween(String value1, String value2) {
+            addCriterion("title_img not between", value1, value2, "titleImg");
+            return (Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {

@@ -3,9 +3,12 @@
 <mapper namespace="cn.bestsort.e_study.mapper.CollegeInfoMapper">
   <resultMap id="BaseResultMap" type="cn.bestsort.e_study.pojo.dto.CollegeInfo">
     <id column="id" jdbcType="BIGINT" property="id" />
-    <result column="type" jdbcType="TINYINT" property="type" />
     <result column="url" jdbcType="VARCHAR" property="url" />
     <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="is_double_first" jdbcType="TINYINT" property="isDoubleFirst" />
+    <result column="is_key" jdbcType="TINYINT" property="isKey" />
+    <result column="is_undergraduate" jdbcType="TINYINT" property="isUndergraduate" />
+    <result column="is_art" jdbcType="TINYINT" property="isArt" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -66,7 +69,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, type, url, description
+    id, url, description, is_double_first, is_key, is_undergraduate, is_art
   </sql>
   <select id="selectByExample" parameterType="cn.bestsort.e_study.pojo.dto.CollegeInfoExample" resultMap="BaseResultMap">
     select
@@ -99,10 +102,12 @@
     </if>
   </delete>
   <insert id="insert" parameterType="cn.bestsort.e_study.pojo.dto.CollegeInfo">
-    insert into college_info (id, type, url, 
-      description)
-    values (#{id,jdbcType=BIGINT}, #{type,jdbcType=TINYINT}, #{url,jdbcType=VARCHAR}, 
-      #{description,jdbcType=VARCHAR})
+    insert into college_info (id, url, description, 
+      is_double_first, is_key, is_undergraduate, 
+      is_art)
+    values (#{id,jdbcType=BIGINT}, #{url,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, 
+      #{isDoubleFirst,jdbcType=TINYINT}, #{isKey,jdbcType=TINYINT}, #{isUndergraduate,jdbcType=TINYINT}, 
+      #{isArt,jdbcType=TINYINT})
   </insert>
   <insert id="insertSelective" parameterType="cn.bestsort.e_study.pojo.dto.CollegeInfo">
     insert into college_info
@@ -110,28 +115,46 @@
       <if test="id != null">
         id,
       </if>
-      <if test="type != null">
-        type,
-      </if>
       <if test="url != null">
         url,
       </if>
       <if test="description != null">
         description,
       </if>
+      <if test="isDoubleFirst != null">
+        is_double_first,
+      </if>
+      <if test="isKey != null">
+        is_key,
+      </if>
+      <if test="isUndergraduate != null">
+        is_undergraduate,
+      </if>
+      <if test="isArt != null">
+        is_art,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
         #{id,jdbcType=BIGINT},
-      </if>
-      <if test="type != null">
-        #{type,jdbcType=TINYINT},
       </if>
       <if test="url != null">
         #{url,jdbcType=VARCHAR},
       </if>
       <if test="description != null">
         #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="isDoubleFirst != null">
+        #{isDoubleFirst,jdbcType=TINYINT},
+      </if>
+      <if test="isKey != null">
+        #{isKey,jdbcType=TINYINT},
+      </if>
+      <if test="isUndergraduate != null">
+        #{isUndergraduate,jdbcType=TINYINT},
+      </if>
+      <if test="isArt != null">
+        #{isArt,jdbcType=TINYINT},
       </if>
     </trim>
   </insert>
@@ -147,14 +170,23 @@
       <if test="record.id != null">
         id = #{record.id,jdbcType=BIGINT},
       </if>
-      <if test="record.type != null">
-        type = #{record.type,jdbcType=TINYINT},
-      </if>
       <if test="record.url != null">
         url = #{record.url,jdbcType=VARCHAR},
       </if>
       <if test="record.description != null">
         description = #{record.description,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isDoubleFirst != null">
+        is_double_first = #{record.isDoubleFirst,jdbcType=TINYINT},
+      </if>
+      <if test="record.isKey != null">
+        is_key = #{record.isKey,jdbcType=TINYINT},
+      </if>
+      <if test="record.isUndergraduate != null">
+        is_undergraduate = #{record.isUndergraduate,jdbcType=TINYINT},
+      </if>
+      <if test="record.isArt != null">
+        is_art = #{record.isArt,jdbcType=TINYINT},
       </if>
     </set>
     <if test="_parameter != null">
@@ -164,9 +196,12 @@
   <update id="updateByExample" parameterType="map">
     update college_info
     set id = #{record.id,jdbcType=BIGINT},
-      type = #{record.type,jdbcType=TINYINT},
       url = #{record.url,jdbcType=VARCHAR},
-      description = #{record.description,jdbcType=VARCHAR}
+      description = #{record.description,jdbcType=VARCHAR},
+      is_double_first = #{record.isDoubleFirst,jdbcType=TINYINT},
+      is_key = #{record.isKey,jdbcType=TINYINT},
+      is_undergraduate = #{record.isUndergraduate,jdbcType=TINYINT},
+      is_art = #{record.isArt,jdbcType=TINYINT}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -174,23 +209,35 @@
   <update id="updateByPrimaryKeySelective" parameterType="cn.bestsort.e_study.pojo.dto.CollegeInfo">
     update college_info
     <set>
-      <if test="type != null">
-        type = #{type,jdbcType=TINYINT},
-      </if>
       <if test="url != null">
         url = #{url,jdbcType=VARCHAR},
       </if>
       <if test="description != null">
         description = #{description,jdbcType=VARCHAR},
       </if>
+      <if test="isDoubleFirst != null">
+        is_double_first = #{isDoubleFirst,jdbcType=TINYINT},
+      </if>
+      <if test="isKey != null">
+        is_key = #{isKey,jdbcType=TINYINT},
+      </if>
+      <if test="isUndergraduate != null">
+        is_undergraduate = #{isUndergraduate,jdbcType=TINYINT},
+      </if>
+      <if test="isArt != null">
+        is_art = #{isArt,jdbcType=TINYINT},
+      </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
   <update id="updateByPrimaryKey" parameterType="cn.bestsort.e_study.pojo.dto.CollegeInfo">
     update college_info
-    set type = #{type,jdbcType=TINYINT},
-      url = #{url,jdbcType=VARCHAR},
-      description = #{description,jdbcType=VARCHAR}
+    set url = #{url,jdbcType=VARCHAR},
+      description = #{description,jdbcType=VARCHAR},
+      is_double_first = #{isDoubleFirst,jdbcType=TINYINT},
+      is_key = #{isKey,jdbcType=TINYINT},
+      is_undergraduate = #{isUndergraduate,jdbcType=TINYINT},
+      is_art = #{isArt,jdbcType=TINYINT}
     where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>

@@ -164,66 +164,6 @@ public class CollegeInfoExample {
             return (Criteria) this;
         }
 
-        public Criteria andTypeIsNull() {
-            addCriterion("type is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andTypeIsNotNull() {
-            addCriterion("type is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andTypeEqualTo(Byte value) {
-            addCriterion("type =", value, "type");
-            return (Criteria) this;
-        }
-
-        public Criteria andTypeNotEqualTo(Byte value) {
-            addCriterion("type <>", value, "type");
-            return (Criteria) this;
-        }
-
-        public Criteria andTypeGreaterThan(Byte value) {
-            addCriterion("type >", value, "type");
-            return (Criteria) this;
-        }
-
-        public Criteria andTypeGreaterThanOrEqualTo(Byte value) {
-            addCriterion("type >=", value, "type");
-            return (Criteria) this;
-        }
-
-        public Criteria andTypeLessThan(Byte value) {
-            addCriterion("type <", value, "type");
-            return (Criteria) this;
-        }
-
-        public Criteria andTypeLessThanOrEqualTo(Byte value) {
-            addCriterion("type <=", value, "type");
-            return (Criteria) this;
-        }
-
-        public Criteria andTypeIn(List<Byte> values) {
-            addCriterion("type in", values, "type");
-            return (Criteria) this;
-        }
-
-        public Criteria andTypeNotIn(List<Byte> values) {
-            addCriterion("type not in", values, "type");
-            return (Criteria) this;
-        }
-
-        public Criteria andTypeBetween(Byte value1, Byte value2) {
-            addCriterion("type between", value1, value2, "type");
-            return (Criteria) this;
-        }
-
-        public Criteria andTypeNotBetween(Byte value1, Byte value2) {
-            addCriterion("type not between", value1, value2, "type");
-            return (Criteria) this;
-        }
-
         public Criteria andUrlIsNull() {
             addCriterion("url is null");
             return (Criteria) this;
@@ -361,6 +301,246 @@ public class CollegeInfoExample {
 
         public Criteria andDescriptionNotBetween(String value1, String value2) {
             addCriterion("description not between", value1, value2, "description");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsDoubleFirstIsNull() {
+            addCriterion("is_double_first is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsDoubleFirstIsNotNull() {
+            addCriterion("is_double_first is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsDoubleFirstEqualTo(Byte value) {
+            addCriterion("is_double_first =", value, "isDoubleFirst");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsDoubleFirstNotEqualTo(Byte value) {
+            addCriterion("is_double_first <>", value, "isDoubleFirst");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsDoubleFirstGreaterThan(Byte value) {
+            addCriterion("is_double_first >", value, "isDoubleFirst");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsDoubleFirstGreaterThanOrEqualTo(Byte value) {
+            addCriterion("is_double_first >=", value, "isDoubleFirst");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsDoubleFirstLessThan(Byte value) {
+            addCriterion("is_double_first <", value, "isDoubleFirst");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsDoubleFirstLessThanOrEqualTo(Byte value) {
+            addCriterion("is_double_first <=", value, "isDoubleFirst");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsDoubleFirstIn(List<Byte> values) {
+            addCriterion("is_double_first in", values, "isDoubleFirst");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsDoubleFirstNotIn(List<Byte> values) {
+            addCriterion("is_double_first not in", values, "isDoubleFirst");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsDoubleFirstBetween(Byte value1, Byte value2) {
+            addCriterion("is_double_first between", value1, value2, "isDoubleFirst");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsDoubleFirstNotBetween(Byte value1, Byte value2) {
+            addCriterion("is_double_first not between", value1, value2, "isDoubleFirst");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsKeyIsNull() {
+            addCriterion("is_key is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsKeyIsNotNull() {
+            addCriterion("is_key is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsKeyEqualTo(Byte value) {
+            addCriterion("is_key =", value, "isKey");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsKeyNotEqualTo(Byte value) {
+            addCriterion("is_key <>", value, "isKey");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsKeyGreaterThan(Byte value) {
+            addCriterion("is_key >", value, "isKey");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsKeyGreaterThanOrEqualTo(Byte value) {
+            addCriterion("is_key >=", value, "isKey");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsKeyLessThan(Byte value) {
+            addCriterion("is_key <", value, "isKey");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsKeyLessThanOrEqualTo(Byte value) {
+            addCriterion("is_key <=", value, "isKey");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsKeyIn(List<Byte> values) {
+            addCriterion("is_key in", values, "isKey");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsKeyNotIn(List<Byte> values) {
+            addCriterion("is_key not in", values, "isKey");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsKeyBetween(Byte value1, Byte value2) {
+            addCriterion("is_key between", value1, value2, "isKey");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsKeyNotBetween(Byte value1, Byte value2) {
+            addCriterion("is_key not between", value1, value2, "isKey");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsUndergraduateIsNull() {
+            addCriterion("is_undergraduate is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsUndergraduateIsNotNull() {
+            addCriterion("is_undergraduate is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsUndergraduateEqualTo(Byte value) {
+            addCriterion("is_undergraduate =", value, "isUndergraduate");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsUndergraduateNotEqualTo(Byte value) {
+            addCriterion("is_undergraduate <>", value, "isUndergraduate");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsUndergraduateGreaterThan(Byte value) {
+            addCriterion("is_undergraduate >", value, "isUndergraduate");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsUndergraduateGreaterThanOrEqualTo(Byte value) {
+            addCriterion("is_undergraduate >=", value, "isUndergraduate");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsUndergraduateLessThan(Byte value) {
+            addCriterion("is_undergraduate <", value, "isUndergraduate");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsUndergraduateLessThanOrEqualTo(Byte value) {
+            addCriterion("is_undergraduate <=", value, "isUndergraduate");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsUndergraduateIn(List<Byte> values) {
+            addCriterion("is_undergraduate in", values, "isUndergraduate");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsUndergraduateNotIn(List<Byte> values) {
+            addCriterion("is_undergraduate not in", values, "isUndergraduate");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsUndergraduateBetween(Byte value1, Byte value2) {
+            addCriterion("is_undergraduate between", value1, value2, "isUndergraduate");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsUndergraduateNotBetween(Byte value1, Byte value2) {
+            addCriterion("is_undergraduate not between", value1, value2, "isUndergraduate");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsArtIsNull() {
+            addCriterion("is_art is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsArtIsNotNull() {
+            addCriterion("is_art is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsArtEqualTo(Byte value) {
+            addCriterion("is_art =", value, "isArt");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsArtNotEqualTo(Byte value) {
+            addCriterion("is_art <>", value, "isArt");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsArtGreaterThan(Byte value) {
+            addCriterion("is_art >", value, "isArt");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsArtGreaterThanOrEqualTo(Byte value) {
+            addCriterion("is_art >=", value, "isArt");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsArtLessThan(Byte value) {
+            addCriterion("is_art <", value, "isArt");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsArtLessThanOrEqualTo(Byte value) {
+            addCriterion("is_art <=", value, "isArt");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsArtIn(List<Byte> values) {
+            addCriterion("is_art in", values, "isArt");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsArtNotIn(List<Byte> values) {
+            addCriterion("is_art not in", values, "isArt");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsArtBetween(Byte value1, Byte value2) {
+            addCriterion("is_art between", value1, value2, "isArt");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsArtNotBetween(Byte value1, Byte value2) {
+            addCriterion("is_art not between", value1, value2, "isArt");
             return (Criteria) this;
         }
     }

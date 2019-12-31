@@ -11,7 +11,6 @@ import org.springframework.web.servlet.ModelAndView;
  */
 @Controller
 @RequestMapping("/web")
-@Api(tags = "系统启动接口")
 public class WebController  {
     @RequestMapping("/index")
     public String jumpIndex() {

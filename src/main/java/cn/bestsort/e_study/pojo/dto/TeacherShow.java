@@ -17,6 +17,8 @@ public class TeacherShow {
 
     private Long pageView;
 
+    private String titleImg;
+
     public Long getId() {
         return id;
     }
@@ -73,6 +75,14 @@ public class TeacherShow {
         this.pageView = pageView;
     }
 
+    public String getTitleImg() {
+        return titleImg;
+    }
+
+    public void setTitleImg(String titleImg) {
+        this.titleImg = titleImg == null ? null : titleImg.trim();
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -86,6 +96,7 @@ public class TeacherShow {
         sb.append(", author=").append(author);
         sb.append(", gmtCreate=").append(gmtCreate);
         sb.append(", pageView=").append(pageView);
+        sb.append(", titleImg=").append(titleImg);
         sb.append("]");
         return sb.toString();
     }

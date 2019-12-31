@@ -21,29 +21,6 @@ public class UserController {
     private UserService userService;
     @Autowired
     private SelectCourseService selectCourseService;
-    @ApiOperation(value = "新增用户",notes = "这里是备注信息")
-    @PostMapping("/add")
-    public boolean addUser(@RequestBody User user) {
-        return false;
-    }
-
-    @ApiOperation("通过id查找用户")
-    @GetMapping("/find/{id}")
-    public User findById(@PathVariable("id") int id) {
-        return new User();
-    }
-
-    @ApiOperation("更新用户信息")
-    @PutMapping("/update")
-    public boolean update(@RequestBody User user) {
-        return true;
-    }
-
-    @ApiOperation("删除用户")
-    @DeleteMapping("/delete/{id}")
-    public boolean delete(@PathVariable("id") int id) {
-        return true;
-    }
 
 
     @ApiOperation(value = "用户注册")
@@ -55,26 +32,19 @@ public class UserController {
         }else{
             //用户不存在，添加该用户
             boolean result = userService.addUser(user);
-            if(result == false){
+            if(!result){
                 //注册失败，请重新输入
                 return false;
             }
             //选课
-            boolean addSelectCourseResult = selectCourseService.addSelectCourse(course,userService.getUserId(user));
-            if (addSelectCourseResult == false){
-                //注册成功，返回登录页面
-                return false;
-            }
-            return true;
+            //注册成功，返回登录页面
+            return selectCourseService.addSelectCourse(course,userService.getUserId(user));
         }
     }
 
     @ApiOperation(value = "用户登录")
     @GetMapping("/login")
     public Boolean login( User user){
-        if (userService.login(user)){
-            return true;
-        }
-        return false;
+        return userService.login(user);
     }
 }

@@ -423,6 +423,126 @@ public class AdmissionInfoExample {
             addCriterion("school_year not between", value1, value2, "schoolYear");
             return (Criteria) this;
         }
+
+        public Criteria andSchoolTypeIsNull() {
+            addCriterion("school_type is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSchoolTypeIsNotNull() {
+            addCriterion("school_type is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSchoolTypeEqualTo(Byte value) {
+            addCriterion("school_type =", value, "schoolType");
+            return (Criteria) this;
+        }
+
+        public Criteria andSchoolTypeNotEqualTo(Byte value) {
+            addCriterion("school_type <>", value, "schoolType");
+            return (Criteria) this;
+        }
+
+        public Criteria andSchoolTypeGreaterThan(Byte value) {
+            addCriterion("school_type >", value, "schoolType");
+            return (Criteria) this;
+        }
+
+        public Criteria andSchoolTypeGreaterThanOrEqualTo(Byte value) {
+            addCriterion("school_type >=", value, "schoolType");
+            return (Criteria) this;
+        }
+
+        public Criteria andSchoolTypeLessThan(Byte value) {
+            addCriterion("school_type <", value, "schoolType");
+            return (Criteria) this;
+        }
+
+        public Criteria andSchoolTypeLessThanOrEqualTo(Byte value) {
+            addCriterion("school_type <=", value, "schoolType");
+            return (Criteria) this;
+        }
+
+        public Criteria andSchoolTypeIn(List<Byte> values) {
+            addCriterion("school_type in", values, "schoolType");
+            return (Criteria) this;
+        }
+
+        public Criteria andSchoolTypeNotIn(List<Byte> values) {
+            addCriterion("school_type not in", values, "schoolType");
+            return (Criteria) this;
+        }
+
+        public Criteria andSchoolTypeBetween(Byte value1, Byte value2) {
+            addCriterion("school_type between", value1, value2, "schoolType");
+            return (Criteria) this;
+        }
+
+        public Criteria andSchoolTypeNotBetween(Byte value1, Byte value2) {
+            addCriterion("school_type not between", value1, value2, "schoolType");
+            return (Criteria) this;
+        }
+
+        public Criteria andSchoolIdIsNull() {
+            addCriterion("school_id is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSchoolIdIsNotNull() {
+            addCriterion("school_id is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSchoolIdEqualTo(Long value) {
+            addCriterion("school_id =", value, "schoolId");
+            return (Criteria) this;
+        }
+
+        public Criteria andSchoolIdNotEqualTo(Long value) {
+            addCriterion("school_id <>", value, "schoolId");
+            return (Criteria) this;
+        }
+
+        public Criteria andSchoolIdGreaterThan(Long value) {
+            addCriterion("school_id >", value, "schoolId");
+            return (Criteria) this;
+        }
+
+        public Criteria andSchoolIdGreaterThanOrEqualTo(Long value) {
+            addCriterion("school_id >=", value, "schoolId");
+            return (Criteria) this;
+        }
+
+        public Criteria andSchoolIdLessThan(Long value) {
+            addCriterion("school_id <", value, "schoolId");
+            return (Criteria) this;
+        }
+
+        public Criteria andSchoolIdLessThanOrEqualTo(Long value) {
+            addCriterion("school_id <=", value, "schoolId");
+            return (Criteria) this;
+        }
+
+        public Criteria andSchoolIdIn(List<Long> values) {
+            addCriterion("school_id in", values, "schoolId");
+            return (Criteria) this;
+        }
+
+        public Criteria andSchoolIdNotIn(List<Long> values) {
+            addCriterion("school_id not in", values, "schoolId");
+            return (Criteria) this;
+        }
+
+        public Criteria andSchoolIdBetween(Long value1, Long value2) {
+            addCriterion("school_id between", value1, value2, "schoolId");
+            return (Criteria) this;
+        }
+
+        public Criteria andSchoolIdNotBetween(Long value1, Long value2) {
+            addCriterion("school_id not between", value1, value2, "schoolId");
+            return (Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {

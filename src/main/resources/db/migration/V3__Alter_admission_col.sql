@@ -1,0 +1,1 @@
+alter table admission_info add column school_id bigint not null ;
