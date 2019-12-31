@@ -15,6 +15,8 @@ public class CollegeInfo {
 
     private Byte isArt;
 
+    private String name;
+
     public Long getId() {
         return id;
     }
@@ -71,6 +73,14 @@ public class CollegeInfo {
         this.isArt = isArt;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name == null ? null : name.trim();
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -84,6 +94,7 @@ public class CollegeInfo {
         sb.append(", isKey=").append(isKey);
         sb.append(", isUndergraduate=").append(isUndergraduate);
         sb.append(", isArt=").append(isArt);
+        sb.append(", name=").append(name);
         sb.append("]");
         return sb.toString();
     }

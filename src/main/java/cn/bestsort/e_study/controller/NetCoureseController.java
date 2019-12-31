@@ -24,7 +24,7 @@ import java.util.UUID;
  * @Date 2019/12/30 17:06
  */
 @RestController
-@Api("网上视频相关接口")
+@Api(tags = "网上视频相关接口")
 @RequestMapping("/video")
 public class NetCoureseController {
     @Autowired

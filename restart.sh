@@ -6,7 +6,7 @@ echo "E_Study_PATH is ${E_Study_Path}"
 kill -9 ${PID}
 echo "begin update E_Study_Path from GitHub..."
 cd ${E_Study_Path}
-
+git stash
 git pull
 if [ $? -eq 0 ];then
     echo "kill java process success"  

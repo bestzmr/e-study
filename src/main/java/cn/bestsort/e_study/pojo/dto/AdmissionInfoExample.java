@@ -424,66 +424,6 @@ public class AdmissionInfoExample {
             return (Criteria) this;
         }
 
-        public Criteria andSchoolTypeIsNull() {
-            addCriterion("school_type is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andSchoolTypeIsNotNull() {
-            addCriterion("school_type is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andSchoolTypeEqualTo(Byte value) {
-            addCriterion("school_type =", value, "schoolType");
-            return (Criteria) this;
-        }
-
-        public Criteria andSchoolTypeNotEqualTo(Byte value) {
-            addCriterion("school_type <>", value, "schoolType");
-            return (Criteria) this;
-        }
-
-        public Criteria andSchoolTypeGreaterThan(Byte value) {
-            addCriterion("school_type >", value, "schoolType");
-            return (Criteria) this;
-        }
-
-        public Criteria andSchoolTypeGreaterThanOrEqualTo(Byte value) {
-            addCriterion("school_type >=", value, "schoolType");
-            return (Criteria) this;
-        }
-
-        public Criteria andSchoolTypeLessThan(Byte value) {
-            addCriterion("school_type <", value, "schoolType");
-            return (Criteria) this;
-        }
-
-        public Criteria andSchoolTypeLessThanOrEqualTo(Byte value) {
-            addCriterion("school_type <=", value, "schoolType");
-            return (Criteria) this;
-        }
-
-        public Criteria andSchoolTypeIn(List<Byte> values) {
-            addCriterion("school_type in", values, "schoolType");
-            return (Criteria) this;
-        }
-
-        public Criteria andSchoolTypeNotIn(List<Byte> values) {
-            addCriterion("school_type not in", values, "schoolType");
-            return (Criteria) this;
-        }
-
-        public Criteria andSchoolTypeBetween(Byte value1, Byte value2) {
-            addCriterion("school_type between", value1, value2, "schoolType");
-            return (Criteria) this;
-        }
-
-        public Criteria andSchoolTypeNotBetween(Byte value1, Byte value2) {
-            addCriterion("school_type not between", value1, value2, "schoolType");
-            return (Criteria) this;
-        }
-
         public Criteria andSchoolIdIsNull() {
             addCriterion("school_id is null");
             return (Criteria) this;
@@ -541,6 +481,66 @@ public class AdmissionInfoExample {
 
         public Criteria andSchoolIdNotBetween(Long value1, Long value2) {
             addCriterion("school_id not between", value1, value2, "schoolId");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsCollegeIsNull() {
+            addCriterion("is_college is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsCollegeIsNotNull() {
+            addCriterion("is_college is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsCollegeEqualTo(Byte value) {
+            addCriterion("is_college =", value, "isCollege");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsCollegeNotEqualTo(Byte value) {
+            addCriterion("is_college <>", value, "isCollege");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsCollegeGreaterThan(Byte value) {
+            addCriterion("is_college >", value, "isCollege");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsCollegeGreaterThanOrEqualTo(Byte value) {
+            addCriterion("is_college >=", value, "isCollege");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsCollegeLessThan(Byte value) {
+            addCriterion("is_college <", value, "isCollege");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsCollegeLessThanOrEqualTo(Byte value) {
+            addCriterion("is_college <=", value, "isCollege");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsCollegeIn(List<Byte> values) {
+            addCriterion("is_college in", values, "isCollege");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsCollegeNotIn(List<Byte> values) {
+            addCriterion("is_college not in", values, "isCollege");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsCollegeBetween(Byte value1, Byte value2) {
+            addCriterion("is_college between", value1, value2, "isCollege");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsCollegeNotBetween(Byte value1, Byte value2) {
+            addCriterion("is_college not between", value1, value2, "isCollege");
             return (Criteria) this;
         }
     }

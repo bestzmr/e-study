@@ -9,6 +9,8 @@ public class HighSchoolInfo {
 
     private String description;
 
+    private String name;
+
     public Long getId() {
         return id;
     }
@@ -41,6 +43,14 @@ public class HighSchoolInfo {
         this.description = description == null ? null : description.trim();
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name == null ? null : name.trim();
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -51,6 +61,7 @@ public class HighSchoolInfo {
         sb.append(", area=").append(area);
         sb.append(", url=").append(url);
         sb.append(", description=").append(description);
+        sb.append(", name=").append(name);
         sb.append("]");
         return sb.toString();
     }

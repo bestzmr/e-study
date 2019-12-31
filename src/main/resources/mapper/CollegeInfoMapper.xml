@@ -9,6 +9,7 @@
     <result column="is_key" jdbcType="TINYINT" property="isKey" />
     <result column="is_undergraduate" jdbcType="TINYINT" property="isUndergraduate" />
     <result column="is_art" jdbcType="TINYINT" property="isArt" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -69,7 +70,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, url, description, is_double_first, is_key, is_undergraduate, is_art
+    id, url, description, is_double_first, is_key, is_undergraduate, is_art, name
   </sql>
   <select id="selectByExample" parameterType="cn.bestsort.e_study.pojo.dto.CollegeInfoExample" resultMap="BaseResultMap">
     select
@@ -104,10 +105,10 @@
   <insert id="insert" parameterType="cn.bestsort.e_study.pojo.dto.CollegeInfo">
     insert into college_info (id, url, description, 
       is_double_first, is_key, is_undergraduate, 
-      is_art)
+      is_art, name)
     values (#{id,jdbcType=BIGINT}, #{url,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, 
       #{isDoubleFirst,jdbcType=TINYINT}, #{isKey,jdbcType=TINYINT}, #{isUndergraduate,jdbcType=TINYINT}, 
-      #{isArt,jdbcType=TINYINT})
+      #{isArt,jdbcType=TINYINT}, #{name,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="cn.bestsort.e_study.pojo.dto.CollegeInfo">
     insert into college_info
@@ -133,6 +134,9 @@
       <if test="isArt != null">
         is_art,
       </if>
+      <if test="name != null">
+        name,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -155,6 +159,9 @@
       </if>
       <if test="isArt != null">
         #{isArt,jdbcType=TINYINT},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -188,6 +195,9 @@
       <if test="record.isArt != null">
         is_art = #{record.isArt,jdbcType=TINYINT},
       </if>
+      <if test="record.name != null">
+        name = #{record.name,jdbcType=VARCHAR},
+      </if>
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -201,7 +211,8 @@
       is_double_first = #{record.isDoubleFirst,jdbcType=TINYINT},
       is_key = #{record.isKey,jdbcType=TINYINT},
       is_undergraduate = #{record.isUndergraduate,jdbcType=TINYINT},
-      is_art = #{record.isArt,jdbcType=TINYINT}
+      is_art = #{record.isArt,jdbcType=TINYINT},
+      name = #{record.name,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -227,6 +238,9 @@
       <if test="isArt != null">
         is_art = #{isArt,jdbcType=TINYINT},
       </if>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
@@ -237,7 +251,8 @@
       is_double_first = #{isDoubleFirst,jdbcType=TINYINT},
       is_key = #{isKey,jdbcType=TINYINT},
       is_undergraduate = #{isUndergraduate,jdbcType=TINYINT},
-      is_art = #{isArt,jdbcType=TINYINT}
+      is_art = #{isArt,jdbcType=TINYINT},
+      name = #{name,jdbcType=VARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>

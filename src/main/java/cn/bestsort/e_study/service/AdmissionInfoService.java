@@ -21,10 +21,10 @@ public class AdmissionInfoService {
     @Autowired
     private AdmissionInfoMapper mapper;
 
-    public List<AdmissionInfo> listAdmissionBySchool(byte type, long id, int begin, int end) {
+    public List<AdmissionInfo> listAdmissionBySchool(Boolean type, long id, int begin, int end) {
         AdmissionInfoExample example = new AdmissionInfoExample();
         example.createCriteria()
-                .andSchoolTypeEqualTo(type)
+                .andIsCollegeEqualTo((byte)(type?1:0))
                 .andSchoolIdEqualTo(id)
                 .andSchoolYearBetween(begin,end);
         return mapper.selectByExample(example);

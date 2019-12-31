@@ -7,8 +7,8 @@
     <result column="policy" jdbcType="VARCHAR" property="policy" />
     <result column="policy_description" jdbcType="VARCHAR" property="policyDescription" />
     <result column="school_year" jdbcType="INTEGER" property="schoolYear" />
-    <result column="school_type" jdbcType="TINYINT" property="schoolType" />
     <result column="school_id" jdbcType="BIGINT" property="schoolId" />
+    <result column="is_college" jdbcType="TINYINT" property="isCollege" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -69,7 +69,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, score, policy, policy_description, school_year, school_type, school_id
+    id, score, policy, policy_description, school_year, school_id, is_college
   </sql>
   <select id="selectByExample" parameterType="cn.bestsort.e_study.pojo.dto.AdmissionInfoExample" resultMap="BaseResultMap">
     select
@@ -103,11 +103,11 @@
   </delete>
   <insert id="insert" parameterType="cn.bestsort.e_study.pojo.dto.AdmissionInfo">
     insert into admission_info (id, score, policy, 
-      policy_description, school_year, school_type, 
-      school_id)
+      policy_description, school_year, school_id, 
+      is_college)
     values (#{id,jdbcType=BIGINT}, #{score,jdbcType=INTEGER}, #{policy,jdbcType=VARCHAR}, 
-      #{policyDescription,jdbcType=VARCHAR}, #{schoolYear,jdbcType=INTEGER}, #{schoolType,jdbcType=TINYINT}, 
-      #{schoolId,jdbcType=BIGINT})
+      #{policyDescription,jdbcType=VARCHAR}, #{schoolYear,jdbcType=INTEGER}, #{schoolId,jdbcType=BIGINT}, 
+      #{isCollege,jdbcType=TINYINT})
   </insert>
   <insert id="insertSelective" parameterType="cn.bestsort.e_study.pojo.dto.AdmissionInfo">
     insert into admission_info
@@ -127,11 +127,11 @@
       <if test="schoolYear != null">
         school_year,
       </if>
-      <if test="schoolType != null">
-        school_type,
-      </if>
       <if test="schoolId != null">
         school_id,
+      </if>
+      <if test="isCollege != null">
+        is_college,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -150,11 +150,11 @@
       <if test="schoolYear != null">
         #{schoolYear,jdbcType=INTEGER},
       </if>
-      <if test="schoolType != null">
-        #{schoolType,jdbcType=TINYINT},
-      </if>
       <if test="schoolId != null">
         #{schoolId,jdbcType=BIGINT},
+      </if>
+      <if test="isCollege != null">
+        #{isCollege,jdbcType=TINYINT},
       </if>
     </trim>
   </insert>
@@ -182,11 +182,11 @@
       <if test="record.schoolYear != null">
         school_year = #{record.schoolYear,jdbcType=INTEGER},
       </if>
-      <if test="record.schoolType != null">
-        school_type = #{record.schoolType,jdbcType=TINYINT},
-      </if>
       <if test="record.schoolId != null">
         school_id = #{record.schoolId,jdbcType=BIGINT},
+      </if>
+      <if test="record.isCollege != null">
+        is_college = #{record.isCollege,jdbcType=TINYINT},
       </if>
     </set>
     <if test="_parameter != null">
@@ -200,8 +200,8 @@
       policy = #{record.policy,jdbcType=VARCHAR},
       policy_description = #{record.policyDescription,jdbcType=VARCHAR},
       school_year = #{record.schoolYear,jdbcType=INTEGER},
-      school_type = #{record.schoolType,jdbcType=TINYINT},
-      school_id = #{record.schoolId,jdbcType=BIGINT}
+      school_id = #{record.schoolId,jdbcType=BIGINT},
+      is_college = #{record.isCollege,jdbcType=TINYINT}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -221,11 +221,11 @@
       <if test="schoolYear != null">
         school_year = #{schoolYear,jdbcType=INTEGER},
       </if>
-      <if test="schoolType != null">
-        school_type = #{schoolType,jdbcType=TINYINT},
-      </if>
       <if test="schoolId != null">
         school_id = #{schoolId,jdbcType=BIGINT},
+      </if>
+      <if test="isCollege != null">
+        is_college = #{isCollege,jdbcType=TINYINT},
       </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
@@ -236,8 +236,8 @@
       policy = #{policy,jdbcType=VARCHAR},
       policy_description = #{policyDescription,jdbcType=VARCHAR},
       school_year = #{schoolYear,jdbcType=INTEGER},
-      school_type = #{schoolType,jdbcType=TINYINT},
-      school_id = #{schoolId,jdbcType=BIGINT}
+      school_id = #{schoolId,jdbcType=BIGINT},
+      is_college = #{isCollege,jdbcType=TINYINT}
     where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>
