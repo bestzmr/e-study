@@ -1,9 +1,10 @@
 package cn.bestsort.e_study.service;
 
+import cn.bestsort.e_study.mapper.NetCourseMapper;
+import cn.bestsort.e_study.pojo.dto.NetCourse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.multipart.MultipartFile;
 
 /**
  * @Author zhaoqiang
@@ -12,11 +13,19 @@ import org.springframework.web.multipart.MultipartFile;
 @Service
 public class NetCourseService {
     @Autowired
-    private NetCourseService netCourseService;
-    public Boolean uploadVideo(@RequestParam("file")MultipartFile file ,
+    private NetCourseMapper netCourseMapper;
+    public Boolean uploadVideo(@RequestParam("name") String name,
                                @RequestParam("decription") String description,
-                               @RequestParam("name") String name){
+                               @RequestParam("url")String url){
 
+        NetCourse netCourse = new NetCourse();
+        netCourse.setName(name);
+        netCourse.setDescription(description);
+        netCourse.setUrl(url);
+        int result = netCourseMapper.insertSelective(netCourse);
+        if (result == 1){
+            return true;
+        }
         return false;
     }
 }

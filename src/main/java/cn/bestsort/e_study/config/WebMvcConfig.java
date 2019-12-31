@@ -2,12 +2,8 @@ package cn.bestsort.e_study.config;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.event.EventListener;
-import org.springframework.web.servlet.config.annotation.CorsRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 import java.io.IOException;
 
@@ -29,17 +25,5 @@ public class WebMvcConfig {
         } catch (IOException e) {
             log.error("自动打开页面失败，请手动打开浏览器");
         }
-    }
-    @Bean
-    public WebMvcConfigurer corsConfigurer() {
-        return new WebMvcConfigurerAdapter() {
-            @Override
-            public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/**")
-                        .allowedHeaders("*")
-                        .allowedMethods("*")
-                        .allowedOrigins("*");
-            }
-        };
     }
 }

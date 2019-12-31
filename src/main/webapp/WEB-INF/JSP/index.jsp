@@ -14,8 +14,8 @@
 </head>
 <body>
 hello,world
-<form action="/video/uploadVideo" method="post">
-    <input type="file" id="file" multiple>
+<form action="/video/uploadVideo" method="post" enctype="multipart/form-data">
+    <input type="file" id="file" name="file" multiple>
     <input type="submit" id="submitForm">
 </form>
 

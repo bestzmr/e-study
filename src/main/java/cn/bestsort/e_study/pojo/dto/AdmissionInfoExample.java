@@ -423,66 +423,6 @@ public class AdmissionInfoExample {
             addCriterion("school_year not between", value1, value2, "schoolYear");
             return (Criteria) this;
         }
-
-        public Criteria andSchoolTypeIsNull() {
-            addCriterion("school_type is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andSchoolTypeIsNotNull() {
-            addCriterion("school_type is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andSchoolTypeEqualTo(Byte value) {
-            addCriterion("school_type =", value, "schoolType");
-            return (Criteria) this;
-        }
-
-        public Criteria andSchoolTypeNotEqualTo(Byte value) {
-            addCriterion("school_type <>", value, "schoolType");
-            return (Criteria) this;
-        }
-
-        public Criteria andSchoolTypeGreaterThan(Byte value) {
-            addCriterion("school_type >", value, "schoolType");
-            return (Criteria) this;
-        }
-
-        public Criteria andSchoolTypeGreaterThanOrEqualTo(Byte value) {
-            addCriterion("school_type >=", value, "schoolType");
-            return (Criteria) this;
-        }
-
-        public Criteria andSchoolTypeLessThan(Byte value) {
-            addCriterion("school_type <", value, "schoolType");
-            return (Criteria) this;
-        }
-
-        public Criteria andSchoolTypeLessThanOrEqualTo(Byte value) {
-            addCriterion("school_type <=", value, "schoolType");
-            return (Criteria) this;
-        }
-
-        public Criteria andSchoolTypeIn(List<Byte> values) {
-            addCriterion("school_type in", values, "schoolType");
-            return (Criteria) this;
-        }
-
-        public Criteria andSchoolTypeNotIn(List<Byte> values) {
-            addCriterion("school_type not in", values, "schoolType");
-            return (Criteria) this;
-        }
-
-        public Criteria andSchoolTypeBetween(Byte value1, Byte value2) {
-            addCriterion("school_type between", value1, value2, "schoolType");
-            return (Criteria) this;
-        }
-
-        public Criteria andSchoolTypeNotBetween(Byte value1, Byte value2) {
-            addCriterion("school_type not between", value1, value2, "schoolType");
-            return (Criteria) this;
-        }
     }
 
     public static class Criteria extends GeneratedCriteria {

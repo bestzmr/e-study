@@ -66,6 +66,5 @@ create table admission_info(
     policy varchar(200),
     policy_description varchar(1000),
     /* 学年 */
-    school_year int not null,
-    school_type tinyint not null
+    school_year int not null
 );
