@@ -46,6 +46,6 @@
         <table tableName="select_course"/>
         <table tableName="teacher_show"/>
         <table tableName="user"/>
-
+        <table tableName="user_video"/>
     </context>
 </generatorConfiguration>
