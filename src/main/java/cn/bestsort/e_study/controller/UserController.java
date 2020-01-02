@@ -9,6 +9,9 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 /**
  * @author ganchaoyang
  * @date 2019/3/1013:55
@@ -25,7 +28,7 @@ public class UserController {
 
     @ApiOperation(value = "用户注册")
     @PostMapping("/register")
-    public Boolean register( User user,  Course course){
+    public Boolean register(User user, Course course){
         if (userService.isUserExist(user.getTel())){
             //该用户已存在
             return false;
@@ -44,7 +47,11 @@ public class UserController {
 
     @ApiOperation(value = "用户登录")
     @GetMapping("/login")
-    public Boolean login( User user){
-        return userService.login(user);
+    public Boolean login(HttpServletRequest request, User user){
+        HttpSession session = request.getSession();
+        if (userService.login(user)){
+            session.setAttribute("user",user);
+        }
+        return false ;
     }
 }

@@ -25,7 +25,7 @@ public class HighSchoolInfoService {
     @Autowired
     private HighSchoolInfoMapper mapper;
 
-    public PageInfo<HighSchoolInfo> listHighSchools(int pageNo, int pageSize,String area) {
+    public PageInfo<HighSchoolInfo> listHighSchools(int pageNo, int pageSize, String area) {
         HighSchoolInfoExample example = new HighSchoolInfoExample();
         PageHelper.startPage(pageNo,pageSize);
         if (!area.isEmpty()){

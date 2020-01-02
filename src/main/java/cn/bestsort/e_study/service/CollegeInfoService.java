@@ -2,7 +2,6 @@ package cn.bestsort.e_study.service;
 
 import cn.bestsort.e_study.mapper.AdmissionInfoMapper;
 import cn.bestsort.e_study.mapper.CollegeInfoMapper;
-import cn.bestsort.e_study.pojo.dto.AdmissionInfo;
 import cn.bestsort.e_study.pojo.dto.AdmissionInfoExample;
 import cn.bestsort.e_study.pojo.dto.CollegeInfo;
 import cn.bestsort.e_study.pojo.dto.CollegeInfoExample;

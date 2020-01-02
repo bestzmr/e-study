@@ -18,6 +18,6 @@ hello,world
     <input type="file" id="file" name="file" multiple>
     <input type="submit" id="submitForm">
 </form>
-
+<a href="/video/videoPlay?url=A.M.V.mp4">播放视频</a>
 </body>
 </html>

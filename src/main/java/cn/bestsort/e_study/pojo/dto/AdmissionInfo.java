@@ -1,5 +1,7 @@
 package cn.bestsort.e_study.pojo.dto;
 
+import lombok.Data;
+@Data
 public class AdmissionInfo {
     private Long id;
 
