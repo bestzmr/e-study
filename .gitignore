@@ -3,9 +3,6 @@
 esw-swagger.iml
 target/
 log/
-mapper/
-/src/main/resources/mapper/
-/src/main/java/cn/bestsort/e_study/pojo/dto/
 /.idea/
 pom.xml___jb_tmp___
 debug.log
