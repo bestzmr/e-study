@@ -3,7 +3,7 @@ package cn.bestsort.e_study.pojo.dto;
 public class AdmissionInfo {
     private Long id;
 
-    private Integer score;
+    private Float score;
 
     private String policy;
 
@@ -23,11 +23,11 @@ public class AdmissionInfo {
         this.id = id;
     }
 
-    public Integer getScore() {
+    public Float getScore() {
         return score;
     }
 
-    public void setScore(Integer score) {
+    public void setScore(Float score) {
         this.score = score;
     }
 

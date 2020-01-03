@@ -65,7 +65,7 @@ create table high_school_info(
 );
 create table admission_info(
     id bigint auto_increment primary key ,
-    score int not null ,
+    score float not null ,
     /* 政策 -> 文件地址 */
     policy varchar(200),
     policy_description varchar(1000),

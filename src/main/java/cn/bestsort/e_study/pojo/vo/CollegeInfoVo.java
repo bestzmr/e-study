@@ -17,7 +17,7 @@ import java.util.List;
  */
 
 @Data
-@ApiModel("后端  --> 前端数据传输类，包含大学学校信息和近年的招生策略。\n该实体用于：高考-名校查询模块的结果返回")
+@ApiModel(description = "后端  --> 前端数据传输类，包含大学学校信息和近年的招生策略。\n该实体用于：高考-名校查询模块的结果返回")
 public class CollegeInfoVo {
     @ApiModelProperty("大学详情，包括包含学校链接、简介、是否双一流、是否重点、是否本科以及是否艺术类院校")
     CollegeInfo collegeInfo;

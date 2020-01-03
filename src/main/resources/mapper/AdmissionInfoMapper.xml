@@ -3,7 +3,7 @@
 <mapper namespace="cn.bestsort.e_study.mapper.AdmissionInfoMapper">
   <resultMap id="BaseResultMap" type="cn.bestsort.e_study.pojo.dto.AdmissionInfo">
     <id column="id" jdbcType="BIGINT" property="id" />
-    <result column="score" jdbcType="INTEGER" property="score" />
+    <result column="score" jdbcType="REAL" property="score" />
     <result column="policy" jdbcType="VARCHAR" property="policy" />
     <result column="policy_description" jdbcType="VARCHAR" property="policyDescription" />
     <result column="school_year" jdbcType="INTEGER" property="schoolYear" />
@@ -105,7 +105,7 @@
     insert into admission_info (id, score, policy, 
       policy_description, school_year, is_college, 
       school_id)
-    values (#{id,jdbcType=BIGINT}, #{score,jdbcType=INTEGER}, #{policy,jdbcType=VARCHAR}, 
+    values (#{id,jdbcType=BIGINT}, #{score,jdbcType=REAL}, #{policy,jdbcType=VARCHAR}, 
       #{policyDescription,jdbcType=VARCHAR}, #{schoolYear,jdbcType=INTEGER}, #{isCollege,jdbcType=TINYINT}, 
       #{schoolId,jdbcType=BIGINT})
   </insert>
@@ -139,7 +139,7 @@
         #{id,jdbcType=BIGINT},
       </if>
       <if test="score != null">
-        #{score,jdbcType=INTEGER},
+        #{score,jdbcType=REAL},
       </if>
       <if test="policy != null">
         #{policy,jdbcType=VARCHAR},
@@ -171,7 +171,7 @@
         id = #{record.id,jdbcType=BIGINT},
       </if>
       <if test="record.score != null">
-        score = #{record.score,jdbcType=INTEGER},
+        score = #{record.score,jdbcType=REAL},
       </if>
       <if test="record.policy != null">
         policy = #{record.policy,jdbcType=VARCHAR},
@@ -196,7 +196,7 @@
   <update id="updateByExample" parameterType="map">
     update admission_info
     set id = #{record.id,jdbcType=BIGINT},
-      score = #{record.score,jdbcType=INTEGER},
+      score = #{record.score,jdbcType=REAL},
       policy = #{record.policy,jdbcType=VARCHAR},
       policy_description = #{record.policyDescription,jdbcType=VARCHAR},
       school_year = #{record.schoolYear,jdbcType=INTEGER},
@@ -210,7 +210,7 @@
     update admission_info
     <set>
       <if test="score != null">
-        score = #{score,jdbcType=INTEGER},
+        score = #{score,jdbcType=REAL},
       </if>
       <if test="policy != null">
         policy = #{policy,jdbcType=VARCHAR},
@@ -232,7 +232,7 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="cn.bestsort.e_study.pojo.dto.AdmissionInfo">
     update admission_info
-    set score = #{score,jdbcType=INTEGER},
+    set score = #{score,jdbcType=REAL},
       policy = #{policy,jdbcType=VARCHAR},
       policy_description = #{policyDescription,jdbcType=VARCHAR},
       school_year = #{schoolYear,jdbcType=INTEGER},
