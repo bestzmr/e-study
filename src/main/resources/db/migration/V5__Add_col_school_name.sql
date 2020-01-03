@@ -5,4 +5,5 @@ create table user_video(
     id bigint primary key auto_increment,
     user_id bigint not null ,
     video_id bigint not null
-)
+);
+alter table course add column course_img varchar(200)

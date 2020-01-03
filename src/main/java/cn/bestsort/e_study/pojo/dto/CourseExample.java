@@ -493,6 +493,76 @@ public class CourseExample {
             addCriterion("total_people not between", value1, value2, "totalPeople");
             return (Criteria) this;
         }
+
+        public Criteria andCourseImgIsNull() {
+            addCriterion("course_img is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCourseImgIsNotNull() {
+            addCriterion("course_img is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCourseImgEqualTo(String value) {
+            addCriterion("course_img =", value, "courseImg");
+            return (Criteria) this;
+        }
+
+        public Criteria andCourseImgNotEqualTo(String value) {
+            addCriterion("course_img <>", value, "courseImg");
+            return (Criteria) this;
+        }
+
+        public Criteria andCourseImgGreaterThan(String value) {
+            addCriterion("course_img >", value, "courseImg");
+            return (Criteria) this;
+        }
+
+        public Criteria andCourseImgGreaterThanOrEqualTo(String value) {
+            addCriterion("course_img >=", value, "courseImg");
+            return (Criteria) this;
+        }
+
+        public Criteria andCourseImgLessThan(String value) {
+            addCriterion("course_img <", value, "courseImg");
+            return (Criteria) this;
+        }
+
+        public Criteria andCourseImgLessThanOrEqualTo(String value) {
+            addCriterion("course_img <=", value, "courseImg");
+            return (Criteria) this;
+        }
+
+        public Criteria andCourseImgLike(String value) {
+            addCriterion("course_img like", value, "courseImg");
+            return (Criteria) this;
+        }
+
+        public Criteria andCourseImgNotLike(String value) {
+            addCriterion("course_img not like", value, "courseImg");
+            return (Criteria) this;
+        }
+
+        public Criteria andCourseImgIn(List<String> values) {
+            addCriterion("course_img in", values, "courseImg");
+            return (Criteria) this;
+        }
+
+        public Criteria andCourseImgNotIn(List<String> values) {
+            addCriterion("course_img not in", values, "courseImg");
+            return (Criteria) this;
+        }
+
+        public Criteria andCourseImgBetween(String value1, String value2) {
+            addCriterion("course_img between", value1, value2, "courseImg");
+            return (Criteria) this;
+        }
+
+        public Criteria andCourseImgNotBetween(String value1, String value2) {
+            addCriterion("course_img not between", value1, value2, "courseImg");
+            return (Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {

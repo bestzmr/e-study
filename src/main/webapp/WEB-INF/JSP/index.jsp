@@ -15,7 +15,12 @@
 <body>
 hello,world
 <form action="/video/uploadVideo" method="post" enctype="multipart/form-data">
-    <input type="file" id="file" name="file" multiple>
+    <div>
+        <a href="/video/listVideo">VIDEOList</a>
+    </div>
+    <div>
+        <input type="file" id="file" name="file" multiple>
+    </div>
     <input type="submit" id="submitForm">
 </form>
 <a href="/video/videoPlay?url=A.M.V.mp4">播放视频</a>

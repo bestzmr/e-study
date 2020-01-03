@@ -7,7 +7,7 @@
     <result column="description" jdbcType="VARCHAR" property="description" />
     <result column="editor" jdbcType="VARCHAR" property="editor" />
     <result column="author" jdbcType="VARCHAR" property="author" />
-    <result column="gmt_create" jdbcType="BIGINT" property="gmtCreate" />
+    <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
     <result column="page_view" jdbcType="BIGINT" property="pageView" />
     <result column="title_img" jdbcType="VARCHAR" property="titleImg" />
   </resultMap>
@@ -107,7 +107,7 @@
       editor, author, gmt_create, 
       page_view, title_img)
     values (#{id,jdbcType=BIGINT}, #{title,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, 
-      #{editor,jdbcType=VARCHAR}, #{author,jdbcType=VARCHAR}, #{gmtCreate,jdbcType=BIGINT}, 
+      #{editor,jdbcType=VARCHAR}, #{author,jdbcType=VARCHAR}, #{gmtCreate,jdbcType=TIMESTAMP}, 
       #{pageView,jdbcType=BIGINT}, #{titleImg,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="cn.bestsort.e_study.pojo.dto.TeacherShow">
@@ -155,7 +155,7 @@
         #{author,jdbcType=VARCHAR},
       </if>
       <if test="gmtCreate != null">
-        #{gmtCreate,jdbcType=BIGINT},
+        #{gmtCreate,jdbcType=TIMESTAMP},
       </if>
       <if test="pageView != null">
         #{pageView,jdbcType=BIGINT},
@@ -190,7 +190,7 @@
         author = #{record.author,jdbcType=VARCHAR},
       </if>
       <if test="record.gmtCreate != null">
-        gmt_create = #{record.gmtCreate,jdbcType=BIGINT},
+        gmt_create = #{record.gmtCreate,jdbcType=TIMESTAMP},
       </if>
       <if test="record.pageView != null">
         page_view = #{record.pageView,jdbcType=BIGINT},
@@ -210,7 +210,7 @@
       description = #{record.description,jdbcType=VARCHAR},
       editor = #{record.editor,jdbcType=VARCHAR},
       author = #{record.author,jdbcType=VARCHAR},
-      gmt_create = #{record.gmtCreate,jdbcType=BIGINT},
+      gmt_create = #{record.gmtCreate,jdbcType=TIMESTAMP},
       page_view = #{record.pageView,jdbcType=BIGINT},
       title_img = #{record.titleImg,jdbcType=VARCHAR}
     <if test="_parameter != null">
@@ -233,7 +233,7 @@
         author = #{author,jdbcType=VARCHAR},
       </if>
       <if test="gmtCreate != null">
-        gmt_create = #{gmtCreate,jdbcType=BIGINT},
+        gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
       </if>
       <if test="pageView != null">
         page_view = #{pageView,jdbcType=BIGINT},
@@ -250,7 +250,7 @@
       description = #{description,jdbcType=VARCHAR},
       editor = #{editor,jdbcType=VARCHAR},
       author = #{author,jdbcType=VARCHAR},
-      gmt_create = #{gmtCreate,jdbcType=BIGINT},
+      gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
       page_view = #{pageView,jdbcType=BIGINT},
       title_img = #{titleImg,jdbcType=VARCHAR}
     where id = #{id,jdbcType=BIGINT}

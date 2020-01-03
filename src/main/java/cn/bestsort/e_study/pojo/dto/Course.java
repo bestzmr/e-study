@@ -13,6 +13,8 @@ public class Course {
 
     private Integer totalPeople;
 
+    private String courseImg;
+
     public Long getId() {
         return id;
     }
@@ -61,6 +63,14 @@ public class Course {
         this.totalPeople = totalPeople;
     }
 
+    public String getCourseImg() {
+        return courseImg;
+    }
+
+    public void setCourseImg(String courseImg) {
+        this.courseImg = courseImg == null ? null : courseImg.trim();
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -73,6 +83,7 @@ public class Course {
         sb.append(", teacher=").append(teacher);
         sb.append(", schoolHour=").append(schoolHour);
         sb.append(", totalPeople=").append(totalPeople);
+        sb.append(", courseImg=").append(courseImg);
         sb.append("]");
         return sb.toString();
     }

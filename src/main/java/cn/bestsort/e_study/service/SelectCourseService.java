@@ -2,7 +2,9 @@ package cn.bestsort.e_study.service;
 
 import cn.bestsort.e_study.mapper.CourseMapper;
 import cn.bestsort.e_study.mapper.SelectCourseMapper;
-import cn.bestsort.e_study.pojo.dto.*;
+import cn.bestsort.e_study.pojo.dto.Course;
+import cn.bestsort.e_study.pojo.dto.CourseExample;
+import cn.bestsort.e_study.pojo.dto.SelectCourse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -8,7 +8,6 @@ import cn.bestsort.e_study.service.UserVideoService;
 import cn.bestsort.e_study.utils.UuidUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.apache.ibatis.jdbc.Null;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -16,12 +15,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.io.BufferedOutputStream;
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.List;
-import java.util.UUID;
 
 /**
  * @Author zhaoqiang
@@ -63,7 +59,7 @@ public class NetCoureseController {
         return modelAndView;
     }
     @ApiOperation(value = "查看所有视频")
-    @PostMapping("/listVideo")
+    @GetMapping("/listVideo")
     public List<NetCourse> listAllNetCourse(HttpServletRequest request){
         HttpSession session = request.getSession();
         User user = (User)session.getAttribute("user");

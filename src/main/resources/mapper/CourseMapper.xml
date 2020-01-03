@@ -8,6 +8,7 @@
     <result column="teacher" jdbcType="VARCHAR" property="teacher" />
     <result column="school_hour" jdbcType="INTEGER" property="schoolHour" />
     <result column="total_people" jdbcType="INTEGER" property="totalPeople" />
+    <result column="course_img" jdbcType="VARCHAR" property="courseImg" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -68,7 +69,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, name, description, teacher, school_hour, total_people
+    id, name, description, teacher, school_hour, total_people, course_img
   </sql>
   <select id="selectByExample" parameterType="cn.bestsort.e_study.pojo.dto.CourseExample" resultMap="BaseResultMap">
     select
@@ -102,11 +103,11 @@
   </delete>
   <insert id="insert" parameterType="cn.bestsort.e_study.pojo.dto.Course">
     insert into course (id, name, description, 
-      teacher, school_hour, total_people
-      )
+      teacher, school_hour, total_people, 
+      course_img)
     values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, 
-      #{teacher,jdbcType=VARCHAR}, #{schoolHour,jdbcType=INTEGER}, #{totalPeople,jdbcType=INTEGER}
-      )
+      #{teacher,jdbcType=VARCHAR}, #{schoolHour,jdbcType=INTEGER}, #{totalPeople,jdbcType=INTEGER}, 
+      #{courseImg,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="cn.bestsort.e_study.pojo.dto.Course">
     insert into course
@@ -129,6 +130,9 @@
       <if test="totalPeople != null">
         total_people,
       </if>
+      <if test="courseImg != null">
+        course_img,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -148,6 +152,9 @@
       </if>
       <if test="totalPeople != null">
         #{totalPeople,jdbcType=INTEGER},
+      </if>
+      <if test="courseImg != null">
+        #{courseImg,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -178,6 +185,9 @@
       <if test="record.totalPeople != null">
         total_people = #{record.totalPeople,jdbcType=INTEGER},
       </if>
+      <if test="record.courseImg != null">
+        course_img = #{record.courseImg,jdbcType=VARCHAR},
+      </if>
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -190,7 +200,8 @@
       description = #{record.description,jdbcType=VARCHAR},
       teacher = #{record.teacher,jdbcType=VARCHAR},
       school_hour = #{record.schoolHour,jdbcType=INTEGER},
-      total_people = #{record.totalPeople,jdbcType=INTEGER}
+      total_people = #{record.totalPeople,jdbcType=INTEGER},
+      course_img = #{record.courseImg,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -213,6 +224,9 @@
       <if test="totalPeople != null">
         total_people = #{totalPeople,jdbcType=INTEGER},
       </if>
+      <if test="courseImg != null">
+        course_img = #{courseImg,jdbcType=VARCHAR},
+      </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
@@ -222,7 +236,8 @@
       description = #{description,jdbcType=VARCHAR},
       teacher = #{teacher,jdbcType=VARCHAR},
       school_hour = #{schoolHour,jdbcType=INTEGER},
-      total_people = #{totalPeople,jdbcType=INTEGER}
+      total_people = #{totalPeople,jdbcType=INTEGER},
+      course_img = #{courseImg,jdbcType=VARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>

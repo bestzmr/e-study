@@ -1,5 +1,7 @@
 package cn.bestsort.e_study.pojo.dto;
 
+import java.util.Date;
+
 public class TeacherShow {
     private Long id;
 
@@ -11,7 +13,7 @@ public class TeacherShow {
 
     private String author;
 
-    private Long gmtCreate;
+    private Date gmtCreate;
 
     private Long pageView;
 
@@ -57,11 +59,11 @@ public class TeacherShow {
         this.author = author == null ? null : author.trim();
     }
 
-    public Long getGmtCreate() {
+    public Date getGmtCreate() {
         return gmtCreate;
     }
 
-    public void setGmtCreate(Long gmtCreate) {
+    public void setGmtCreate(Date gmtCreate) {
         this.gmtCreate = gmtCreate;
     }
 

@@ -1,6 +1,7 @@
 package cn.bestsort.e_study.pojo.dto;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class TeacherShowExample {
@@ -454,52 +455,52 @@ public class TeacherShowExample {
             return (Criteria) this;
         }
 
-        public Criteria andGmtCreateEqualTo(Long value) {
+        public Criteria andGmtCreateEqualTo(Date value) {
             addCriterion("gmt_create =", value, "gmtCreate");
             return (Criteria) this;
         }
 
-        public Criteria andGmtCreateNotEqualTo(Long value) {
+        public Criteria andGmtCreateNotEqualTo(Date value) {
             addCriterion("gmt_create <>", value, "gmtCreate");
             return (Criteria) this;
         }
 
-        public Criteria andGmtCreateGreaterThan(Long value) {
+        public Criteria andGmtCreateGreaterThan(Date value) {
             addCriterion("gmt_create >", value, "gmtCreate");
             return (Criteria) this;
         }
 
-        public Criteria andGmtCreateGreaterThanOrEqualTo(Long value) {
+        public Criteria andGmtCreateGreaterThanOrEqualTo(Date value) {
             addCriterion("gmt_create >=", value, "gmtCreate");
             return (Criteria) this;
         }
 
-        public Criteria andGmtCreateLessThan(Long value) {
+        public Criteria andGmtCreateLessThan(Date value) {
             addCriterion("gmt_create <", value, "gmtCreate");
             return (Criteria) this;
         }
 
-        public Criteria andGmtCreateLessThanOrEqualTo(Long value) {
+        public Criteria andGmtCreateLessThanOrEqualTo(Date value) {
             addCriterion("gmt_create <=", value, "gmtCreate");
             return (Criteria) this;
         }
 
-        public Criteria andGmtCreateIn(List<Long> values) {
+        public Criteria andGmtCreateIn(List<Date> values) {
             addCriterion("gmt_create in", values, "gmtCreate");
             return (Criteria) this;
         }
 
-        public Criteria andGmtCreateNotIn(List<Long> values) {
+        public Criteria andGmtCreateNotIn(List<Date> values) {
             addCriterion("gmt_create not in", values, "gmtCreate");
             return (Criteria) this;
         }
 
-        public Criteria andGmtCreateBetween(Long value1, Long value2) {
+        public Criteria andGmtCreateBetween(Date value1, Date value2) {
             addCriterion("gmt_create between", value1, value2, "gmtCreate");
             return (Criteria) this;
         }
 
-        public Criteria andGmtCreateNotBetween(Long value1, Long value2) {
+        public Criteria andGmtCreateNotBetween(Date value1, Date value2) {
             addCriterion("gmt_create not between", value1, value2, "gmtCreate");
             return (Criteria) this;
         }
