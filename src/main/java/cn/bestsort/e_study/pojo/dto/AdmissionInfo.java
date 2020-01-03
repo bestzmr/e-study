@@ -11,9 +11,9 @@ public class AdmissionInfo {
 
     private Integer schoolYear;
 
-    private Long schoolId;
-
     private Byte isCollege;
+
+    private Long schoolId;
 
     public Long getId() {
         return id;
@@ -55,20 +55,20 @@ public class AdmissionInfo {
         this.schoolYear = schoolYear;
     }
 
-    public Long getSchoolId() {
-        return schoolId;
-    }
-
-    public void setSchoolId(Long schoolId) {
-        this.schoolId = schoolId;
-    }
-
     public Byte getIsCollege() {
         return isCollege;
     }
 
     public void setIsCollege(Byte isCollege) {
         this.isCollege = isCollege;
+    }
+
+    public Long getSchoolId() {
+        return schoolId;
+    }
+
+    public void setSchoolId(Long schoolId) {
+        this.schoolId = schoolId;
     }
 
     @Override
@@ -82,8 +82,8 @@ public class AdmissionInfo {
         sb.append(", policy=").append(policy);
         sb.append(", policyDescription=").append(policyDescription);
         sb.append(", schoolYear=").append(schoolYear);
-        sb.append(", schoolId=").append(schoolId);
         sb.append(", isCollege=").append(isCollege);
+        sb.append(", schoolId=").append(schoolId);
         sb.append("]");
         return sb.toString();
     }

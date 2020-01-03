@@ -15,16 +15,16 @@ import lombok.Data;
 @Data
 @ApiModel("高考资讯:大学查询 实体(使用本实体并通过GET查询数据)")
 public class CollegeInfoQuery {
-    @ApiModelProperty("是否双一流")
+    @ApiModelProperty("是否双一流,非必须")
     private Boolean isDoubleFirst;
 
-    @ApiModelProperty("是否重点院校")
+    @ApiModelProperty("是否重点院校,非必须")
     private Boolean isKey;
 
-    @ApiModelProperty("是否本科院校")
+    @ApiModelProperty("是否本科院校,非必须")
     private Boolean isUndergraduate;
 
-    @ApiModelProperty("是否艺术类院校")
+    @ApiModelProperty("是否艺术类院校,非必须")
     private Boolean isArt;
 
 

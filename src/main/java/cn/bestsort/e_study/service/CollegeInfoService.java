@@ -10,8 +10,8 @@ import cn.bestsort.e_study.pojo.vo.CollegeInfoVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * TODO
@@ -53,4 +53,12 @@ public class CollegeInfoService {
         return result;
     }
 
+    public List<String> listArea() {
+        List<CollegeInfo> list = mapper.selectByExample(new CollegeInfoExample());
+        Set<String> buf = new HashSet<>();
+        for (CollegeInfo collegeInfo : list) {
+            buf.add(collegeInfo.getArea());
+        }
+        return new ArrayList<>(buf);
+    }
 }

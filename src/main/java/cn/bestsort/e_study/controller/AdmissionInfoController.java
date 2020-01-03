@@ -4,6 +4,7 @@ import cn.bestsort.e_study.pojo.dto.AdmissionInfo;
 import cn.bestsort.e_study.service.AdmissionInfoService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.models.auth.In;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,7 +28,10 @@ public class AdmissionInfoController {
     @ApiOperation(value = "根据学校id获取该学校从begin - end年份的招生信息.",
             notes = "type:学校类型(0表示中考资讯,1表示高考资讯)")
     @GetMapping("/high_school")
-    public List<AdmissionInfo> listAdmission(boolean isCollege, long schoolId, int begin, int end){
+    public List<AdmissionInfo> listAdmission(Boolean isCollege,
+                                             Long schoolId,
+                                             @RequestParam(defaultValue = "2017") Integer begin,
+                                             @RequestParam(defaultValue = "2019") Integer end){
         return service.listAdmissionBySchool(isCollege,schoolId,begin,end);
     }
 }

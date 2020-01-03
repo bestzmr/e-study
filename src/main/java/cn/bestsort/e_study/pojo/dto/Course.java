@@ -9,11 +9,11 @@ public class Course {
 
     private String teacher;
 
+    private String courseImg;
+
     private Integer schoolHour;
 
     private Integer totalPeople;
-
-    private String courseImg;
 
     public Long getId() {
         return id;
@@ -47,6 +47,14 @@ public class Course {
         this.teacher = teacher == null ? null : teacher.trim();
     }
 
+    public String getCourseImg() {
+        return courseImg;
+    }
+
+    public void setCourseImg(String courseImg) {
+        this.courseImg = courseImg == null ? null : courseImg.trim();
+    }
+
     public Integer getSchoolHour() {
         return schoolHour;
     }
@@ -63,14 +71,6 @@ public class Course {
         this.totalPeople = totalPeople;
     }
 
-    public String getCourseImg() {
-        return courseImg;
-    }
-
-    public void setCourseImg(String courseImg) {
-        this.courseImg = courseImg == null ? null : courseImg.trim();
-    }
-
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -81,9 +81,9 @@ public class Course {
         sb.append(", name=").append(name);
         sb.append(", description=").append(description);
         sb.append(", teacher=").append(teacher);
+        sb.append(", courseImg=").append(courseImg);
         sb.append(", schoolHour=").append(schoolHour);
         sb.append(", totalPeople=").append(totalPeople);
-        sb.append(", courseImg=").append(courseImg);
         sb.append("]");
         return sb.toString();
     }

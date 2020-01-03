@@ -7,6 +7,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,6 +21,7 @@ import java.util.List;
  * @date 12/30/19 3:57 PM
  */
 @Api(tags = "中考资讯相关接口")
+@RequestMapping("/HighSchool")
 @RestController
 public class HighSchoolInfoController {
     @Autowired
@@ -27,7 +29,7 @@ public class HighSchoolInfoController {
 
     @ApiOperation(value = "通过[area](学区)、[pageNo](页码)和[pageSize](页大小)获取对应中考咨询列表)",
             notes = "获取学校信息(简介、官网、所属学区)\nPs.带[]的参数均可不填")
-    @GetMapping("/listHighSchools")
+    @GetMapping("/listAll")
     public PageInfo<HighSchoolInfo> getPage(@RequestParam(defaultValue = "1") int pageNo,
                                             @RequestParam(defaultValue = "5") int pageSize,
                                             @RequestParam(required = false) String area){
@@ -35,13 +37,13 @@ public class HighSchoolInfoController {
     }
 
     @ApiOperation("根据id获取对应中学详情(学区、官网、简介)")
-    @GetMapping("/getHighSchoolsDetail")
+    @GetMapping("/getDetailById")
     public HighSchoolInfo getHighSchoolInfoDetail(Long id){
         return service.getHighSchoolDetail(id);
     }
 
     @ApiOperation("获取所有的学区")
-    @GetMapping("/listHighSchoolArea")
+    @GetMapping("/listAllArea")
     public List<String> getHighSchoolArea(){
         return service.getAllHighSchoolArea();
     }

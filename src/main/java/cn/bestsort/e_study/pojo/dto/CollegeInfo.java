@@ -5,6 +5,10 @@ public class CollegeInfo {
 
     private String url;
 
+    private String name;
+
+    private String area;
+
     private String description;
 
     private Byte isDoubleFirst;
@@ -14,8 +18,6 @@ public class CollegeInfo {
     private Byte isUndergraduate;
 
     private Byte isArt;
-
-    private String name;
 
     public Long getId() {
         return id;
@@ -31,6 +33,22 @@ public class CollegeInfo {
 
     public void setUrl(String url) {
         this.url = url == null ? null : url.trim();
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name == null ? null : name.trim();
+    }
+
+    public String getArea() {
+        return area;
+    }
+
+    public void setArea(String area) {
+        this.area = area == null ? null : area.trim();
     }
 
     public String getDescription() {
@@ -73,14 +91,6 @@ public class CollegeInfo {
         this.isArt = isArt;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name == null ? null : name.trim();
-    }
-
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -89,12 +99,13 @@ public class CollegeInfo {
         sb.append("Hash = ").append(hashCode());
         sb.append(", id=").append(id);
         sb.append(", url=").append(url);
+        sb.append(", name=").append(name);
+        sb.append(", area=").append(area);
         sb.append(", description=").append(description);
         sb.append(", isDoubleFirst=").append(isDoubleFirst);
         sb.append(", isKey=").append(isKey);
         sb.append(", isUndergraduate=").append(isUndergraduate);
         sb.append(", isArt=").append(isArt);
-        sb.append(", name=").append(name);
         sb.append("]");
         return sb.toString();
     }

@@ -4,12 +4,13 @@
   <resultMap id="BaseResultMap" type="cn.bestsort.e_study.pojo.dto.CollegeInfo">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="url" jdbcType="VARCHAR" property="url" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="area" jdbcType="VARCHAR" property="area" />
     <result column="description" jdbcType="VARCHAR" property="description" />
     <result column="is_double_first" jdbcType="TINYINT" property="isDoubleFirst" />
     <result column="is_key" jdbcType="TINYINT" property="isKey" />
     <result column="is_undergraduate" jdbcType="TINYINT" property="isUndergraduate" />
     <result column="is_art" jdbcType="TINYINT" property="isArt" />
-    <result column="name" jdbcType="VARCHAR" property="name" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -70,7 +71,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, url, description, is_double_first, is_key, is_undergraduate, is_art, name
+    id, url, name, area, description, is_double_first, is_key, is_undergraduate, is_art
   </sql>
   <select id="selectByExample" parameterType="cn.bestsort.e_study.pojo.dto.CollegeInfoExample" resultMap="BaseResultMap">
     select
@@ -103,12 +104,14 @@
     </if>
   </delete>
   <insert id="insert" parameterType="cn.bestsort.e_study.pojo.dto.CollegeInfo">
-    insert into college_info (id, url, description, 
-      is_double_first, is_key, is_undergraduate, 
-      is_art, name)
-    values (#{id,jdbcType=BIGINT}, #{url,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, 
-      #{isDoubleFirst,jdbcType=TINYINT}, #{isKey,jdbcType=TINYINT}, #{isUndergraduate,jdbcType=TINYINT}, 
-      #{isArt,jdbcType=TINYINT}, #{name,jdbcType=VARCHAR})
+    insert into college_info (id, url, name, 
+      area, description, is_double_first, 
+      is_key, is_undergraduate, is_art
+      )
+    values (#{id,jdbcType=BIGINT}, #{url,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
+      #{area,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, #{isDoubleFirst,jdbcType=TINYINT}, 
+      #{isKey,jdbcType=TINYINT}, #{isUndergraduate,jdbcType=TINYINT}, #{isArt,jdbcType=TINYINT}
+      )
   </insert>
   <insert id="insertSelective" parameterType="cn.bestsort.e_study.pojo.dto.CollegeInfo">
     insert into college_info
@@ -118,6 +121,12 @@
       </if>
       <if test="url != null">
         url,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="area != null">
+        area,
       </if>
       <if test="description != null">
         description,
@@ -134,9 +143,6 @@
       <if test="isArt != null">
         is_art,
       </if>
-      <if test="name != null">
-        name,
-      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -144,6 +150,12 @@
       </if>
       <if test="url != null">
         #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="area != null">
+        #{area,jdbcType=VARCHAR},
       </if>
       <if test="description != null">
         #{description,jdbcType=VARCHAR},
@@ -159,9 +171,6 @@
       </if>
       <if test="isArt != null">
         #{isArt,jdbcType=TINYINT},
-      </if>
-      <if test="name != null">
-        #{name,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -180,6 +189,12 @@
       <if test="record.url != null">
         url = #{record.url,jdbcType=VARCHAR},
       </if>
+      <if test="record.name != null">
+        name = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.area != null">
+        area = #{record.area,jdbcType=VARCHAR},
+      </if>
       <if test="record.description != null">
         description = #{record.description,jdbcType=VARCHAR},
       </if>
@@ -195,9 +210,6 @@
       <if test="record.isArt != null">
         is_art = #{record.isArt,jdbcType=TINYINT},
       </if>
-      <if test="record.name != null">
-        name = #{record.name,jdbcType=VARCHAR},
-      </if>
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -207,12 +219,13 @@
     update college_info
     set id = #{record.id,jdbcType=BIGINT},
       url = #{record.url,jdbcType=VARCHAR},
+      name = #{record.name,jdbcType=VARCHAR},
+      area = #{record.area,jdbcType=VARCHAR},
       description = #{record.description,jdbcType=VARCHAR},
       is_double_first = #{record.isDoubleFirst,jdbcType=TINYINT},
       is_key = #{record.isKey,jdbcType=TINYINT},
       is_undergraduate = #{record.isUndergraduate,jdbcType=TINYINT},
-      is_art = #{record.isArt,jdbcType=TINYINT},
-      name = #{record.name,jdbcType=VARCHAR}
+      is_art = #{record.isArt,jdbcType=TINYINT}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -222,6 +235,12 @@
     <set>
       <if test="url != null">
         url = #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="area != null">
+        area = #{area,jdbcType=VARCHAR},
       </if>
       <if test="description != null">
         description = #{description,jdbcType=VARCHAR},
@@ -238,21 +257,19 @@
       <if test="isArt != null">
         is_art = #{isArt,jdbcType=TINYINT},
       </if>
-      <if test="name != null">
-        name = #{name,jdbcType=VARCHAR},
-      </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
   <update id="updateByPrimaryKey" parameterType="cn.bestsort.e_study.pojo.dto.CollegeInfo">
     update college_info
     set url = #{url,jdbcType=VARCHAR},
+      name = #{name,jdbcType=VARCHAR},
+      area = #{area,jdbcType=VARCHAR},
       description = #{description,jdbcType=VARCHAR},
       is_double_first = #{isDoubleFirst,jdbcType=TINYINT},
       is_key = #{isKey,jdbcType=TINYINT},
       is_undergraduate = #{isUndergraduate,jdbcType=TINYINT},
-      is_art = #{isArt,jdbcType=TINYINT},
-      name = #{name,jdbcType=VARCHAR}
+      is_art = #{isArt,jdbcType=TINYINT}
     where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>
