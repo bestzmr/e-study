@@ -1,8 +1,11 @@
 package cn.bestsort.e_study.service;
 
+import cn.bestsort.e_study.mapper.AdmissionInfoMapper;
 import cn.bestsort.e_study.mapper.HighSchoolInfoMapper;
+import cn.bestsort.e_study.pojo.dto.AdmissionInfoExample;
 import cn.bestsort.e_study.pojo.dto.HighSchoolInfo;
 import cn.bestsort.e_study.pojo.dto.HighSchoolInfoExample;
+import cn.bestsort.e_study.pojo.vo.HighSchoolVo;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +27,8 @@ import java.util.Set;
 public class HighSchoolInfoService {
     @Autowired
     private HighSchoolInfoMapper mapper;
-
+    @Autowired
+    private AdmissionInfoMapper admissionInfoMapper;
     public PageInfo<HighSchoolInfo> listHighSchools(int pageNo, int pageSize, String area) {
         HighSchoolInfoExample example = new HighSchoolInfoExample();
         PageHelper.startPage(pageNo,pageSize);
@@ -34,8 +38,17 @@ public class HighSchoolInfoService {
         return new PageInfo<>(mapper.selectByExample(example));
     }
 
-    public HighSchoolInfo getHighSchoolDetail(Long id) {
-        return mapper.selectByPrimaryKey(id);
+    public HighSchoolVo getHighSchoolDetail(Long id,int begin,int end) {
+        HighSchoolVo res = new HighSchoolVo();
+        res.setHighSchoolInfo(mapper.selectByPrimaryKey(id));
+        AdmissionInfoExample example = new AdmissionInfoExample();
+
+        example.createCriteria()
+                .andSchoolIdEqualTo(id)
+                .andSchoolYearBetween(begin,end);
+        res.setAdmissionInfos(admissionInfoMapper.selectByExample(example));
+
+        return res;
     }
 
     public List<String> getAllHighSchoolArea() {

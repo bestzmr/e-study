@@ -1,6 +1,7 @@
 package cn.bestsort.e_study.controller;
 
 import cn.bestsort.e_study.pojo.dto.HighSchoolInfo;
+import cn.bestsort.e_study.pojo.vo.HighSchoolVo;
 import cn.bestsort.e_study.service.HighSchoolInfoService;
 import com.github.pagehelper.PageInfo;
 import io.swagger.annotations.Api;
@@ -38,8 +39,10 @@ public class HighSchoolInfoController {
 
     @ApiOperation("根据id获取对应中学详情(学区、官网、简介)")
     @GetMapping("/getDetailById")
-    public HighSchoolInfo getHighSchoolInfoDetail(Long id){
-        return service.getHighSchoolDetail(id);
+    public HighSchoolVo getHighSchoolInfoDetail(Long id,
+                                                @RequestParam(defaultValue = "2017") int beginYear,
+                                                @RequestParam(defaultValue = "2019") int endYear){
+        return service.getHighSchoolDetail(id,beginYear,endYear);
     }
 
     @ApiOperation("获取所有的学区")
