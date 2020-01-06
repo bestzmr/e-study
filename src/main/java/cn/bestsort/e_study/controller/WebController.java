@@ -17,5 +17,13 @@ public class WebController  {
 //        ModelAndView mav=new ModelAndView("index");
         return "index";
     }
+    @RequestMapping("/highschool")
+    public String jumpHighSchool(){
+        return "highschool";
+    }
 
+    @RequestMapping("/middleschool")
+    public String jumpMiddleSchool(){
+        return "middleschool";
+    }
 }

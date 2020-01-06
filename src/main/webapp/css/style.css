@@ -1,0 +1,44 @@
+/* 左侧导航栏样式 */
+
+.left-width {
+	margin-left: 10%;
+	width: 20%;
+	height: 70%;
+	position: absolute;
+	background-color: #D9EDF7;
+	border-radius: 25px;
+	box-shadow: 10px 10px 5px #888888;
+}
+
+.left-consty {
+	margin: 200px 50px 100px 50px;
+}
+
+/* 选中样式 */
+.active-bkg {
+	background-color: #EBEBEB;
+}
+
+/* 右侧样式 */
+.right-pos {
+	height: 600px;
+	margin-left: 35%;
+	margin-top: 100px;
+	margin-right: 10%;
+	background-color: #f6f6f6;
+	border-radius: 25px;
+	box-shadow: 10px 10px 5px #888888;
+}
+
+.rightNavigation-pos {
+	margin-top: 50px;
+	position: absolute;
+}
+
+.content-pos {
+	align-content: center;
+}
+
+.table_list_box{
+   table-layout:fixed !important;
+}

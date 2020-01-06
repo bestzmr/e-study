@@ -42,10 +42,11 @@ public class HighSchoolInfoService {
         HighSchoolVo res = new HighSchoolVo();
         res.setHighSchoolInfo(mapper.selectByPrimaryKey(id));
         AdmissionInfoExample example = new AdmissionInfoExample();
-
-        example.createCriteria()
-                .andSchoolIdEqualTo(id)
-                .andSchoolYearBetween(begin,end);
+        if (id != null) {
+            example.createCriteria()
+                    .andSchoolIdEqualTo(id)
+                    .andSchoolYearBetween(begin, end);
+        }
         res.setAdmissionInfos(admissionInfoMapper.selectByExample(example));
 
         return res;
@@ -60,4 +61,7 @@ public class HighSchoolInfoService {
         return new ArrayList<>(result);
     }
 
+    public List<HighSchoolInfo> listHighSchools() {
+        return mapper.selectByExample(new HighSchoolInfoExample());
+    }
 }

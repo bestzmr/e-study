@@ -5,6 +5,7 @@ import cn.bestsort.e_study.pojo.vo.HighSchoolVo;
 import cn.bestsort.e_study.service.HighSchoolInfoService;
 import com.github.pagehelper.PageInfo;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -39,10 +40,16 @@ public class HighSchoolInfoController {
 
     @ApiOperation("根据id获取对应中学详情(学区、官网、简介)")
     @GetMapping("/getDetailById")
-    public HighSchoolVo getHighSchoolInfoDetail(Long id,
+    public HighSchoolVo getHighSchoolInfoDetail(@RequestParam(required = false) Long id,
                                                 @RequestParam(defaultValue = "2017") int beginYear,
                                                 @RequestParam(defaultValue = "2019") int endYear){
         return service.getHighSchoolDetail(id,beginYear,endYear);
+    }
+
+    @ApiOperation("获取所有中学信息")
+    @GetMapping("/getAllHighSchools")
+    public List<HighSchoolInfo> getHighSchoolList(){
+        return service.listHighSchools();
     }
 
     @ApiOperation("获取所有的学区")
