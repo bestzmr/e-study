@@ -31,7 +31,7 @@ public class AdmissionInfoController {
     public List<AdmissionInfo> listAdmission(Boolean isCollege,
                                              Long schoolId,
                                              @RequestParam(defaultValue = "2017") Integer begin,
-                                             @RequestParam(defaultValue = "2019") Integer end){
+                                             @RequestParam(defaultValue = "2020") Integer end){
         return service.listAdmissionBySchool(isCollege,schoolId,begin,end);
     }
 }

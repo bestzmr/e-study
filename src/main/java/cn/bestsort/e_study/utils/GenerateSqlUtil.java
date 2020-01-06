@@ -133,7 +133,7 @@ public class GenerateSqlUtil {
     
     private static String admissionInfo(int id,byte isCollege){
         StringBuilder res = new StringBuilder();
-        for (int i = 2010; i < 2019; i++) {
+        for (int i = 2015; i <= 2019; i++) {
             res.append(String.format(generateDynamicSql("admission_info", 6),
                     "score",
                     "policy",

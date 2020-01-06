@@ -27,6 +27,8 @@ public class CollegeInfoQuery {
     @ApiModelProperty("是否艺术类院校,非必须")
     private Boolean isArt;
 
+    @ApiModelProperty("学区, 非必须")
+    private String area;
 
 
     @ApiModelProperty("获取区间 [beginYear,endYear] 的录取信息, 不填默认为beginYear = 2017年")

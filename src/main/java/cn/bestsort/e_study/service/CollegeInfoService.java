@@ -35,16 +35,13 @@ public class CollegeInfoService {
                 schools.add(list);
             }
         }
-
         AdmissionInfoExample example = new AdmissionInfoExample();
-        CollegeInfoVo vo = new CollegeInfoVo();
-
         for (CollegeInfo collegeInfo:schools){
+            CollegeInfoVo vo = new CollegeInfoVo();
             example.createCriteria()
                     .andIsCollegeEqualTo((byte)1)
                     .andSchoolYearBetween(collegeInfoVo.getBeginYear(),collegeInfoVo.getEndYear())
                     .andSchoolIdEqualTo(collegeInfo.getId());
-
             vo.setAdmissionInfos(admissionInfoMapper.selectByExample(example));
             vo.setCollegeInfo(collegeInfo);
             result.add(vo);

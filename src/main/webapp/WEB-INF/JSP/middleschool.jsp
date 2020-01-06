@@ -29,7 +29,7 @@
             <li role="presentation" class="active"><a id="a1" href="middleschool.jsp" style="text-align: center"><span class="glyphicon glyphicon-align-left"
                                                                                                                        aria-hidden="true"></span>中考</a></li>
             <li role="presentation">
-                <a id="a2" href="highschool.jsp" style="text-align: center">
+                <a id="a2" href="highschool" style="text-align: center">
                 <span class="glyphicon glyphicon-align-left" aria-hidden="true">高考</span>
                 </a>
             </li>
@@ -112,34 +112,37 @@
                     <script type="text/javascript">
                         $(function() {
                             listCollege();
+                            getSchoolAreas();
+                            getNews();
+                            getAreas();
                         });
                         let listCollege = function() {
-                            debugger;
-                            ajax_get("http://localhost:8080/HighSchool/getDetailById",{},function (data) {
+                            // debugger;
+                            ajax_get("http://localhost:8080/HighSchool/getAllHighSchools",{},function (data) {
                                 var highSchoolObj = JSON.parse(data);
                                 // 遍历本地中学，动态添加超链接
-                                debugger
+                                // debugger;
                                 for (var i = 0; i <= highSchoolObj.length; i++) {
                                     let fori = "school" + i;
                                     $("#highschoolListT").append('<td><a id="' + fori + '" ></a></td>'); // 添加a标签
                                     // 添加内容和href
-                                    $("#" + fori).text(highSchoolObj[i].highSchoolInfo[middleschool_config.highschoolName]);
-                                    $("#" + fori).attr("href", highSchoolObj[i].highSchoolInfo[middleschool_config.highschoolUrl]);
+                                    $("#" + fori).text(highSchoolObj[i][middleschool_config.highschoolName]);
+                                    $("#" + fori).attr("href", highSchoolObj[i][middleschool_config.highschoolUrl]);
                                     if (i % 4 == 0 && i != 0) {
                                         $("#highschoolListT").append('</tr> <tr>');
                                     }
                                 }
-                                console.log("1231");
+                                // console.log("1231");
                             });
                         };
 
-                        let admission = $.get("json/overScore.js", function(data) {
+                        let getSchoolAreas = function() {
+                            ajax_get("http://localhost:8080/HighSchool/getAllHighSchools", {}, function (data) {
                             var highSchoolObj = JSON.parse(data);
                             //去除重复的对象；添加下拉列表项
-                            $(function() {
                                 for (var i = 0; i < highSchoolObj.length; i++) {
                                     for (var j = i + 1; j < highSchoolObj.length;) {
-                                        if (highSchoolObj[i].highSchoolInfo[middleschool_config.highschoolArea] == highSchoolObj[j].highSchoolInfo[middleschool_config.highschoolArea]) { //通过id属性进行匹配；
+                                        if (highSchoolObj[i][middleschool_config.highschoolArea] == highSchoolObj[j][middleschool_config.highschoolArea]) { //通过id属性进行匹配；
                                             highSchoolObj.splice(j, 1);
                                         } else {
                                             j++;
@@ -147,26 +150,38 @@
                                     }
                                 }
                                 for (var i = 0; i < highSchoolObj.length; i++) {
-                                    $("#selectbrand").append('<option value="' + highSchoolObj[i].highSchoolInfo[middleschool_config.highschoolArea] +
-                                        '">' + highSchoolObj[i].highSchoolInfo[middleschool_config.highschoolArea] + '</option>');
+                                    $("#selectbrand").append('<option value="' + highSchoolObj[i][middleschool_config.highschoolArea] +
+                                        '">' + highSchoolObj[i][middleschool_config.highschoolArea] + '</option>');
+                                }
+                                // console.log(highSchoolObjC);
+
+                            });
+                        };
+                        let getNews = function () {
+                            ajax_get("http://localhost:8080/HighSchool/getDetailById", {}, function (data) {
+                                // $("#announcement").text(data);
+                                // debugger
+                                var annountObj = JSON.parse(data);
+                                // console.log(annountObj.title);
+                                $("#titleH").text(annountObj[middleschool_config.title]);
+                                $("#contentP").text(annountObj[middleschool_config.content]);
+                                $("#downLoadA").text(annountObj[middleschool_config.feilName]);
+                                $("#downLoadA").attr("href", annountObj[middleschool_config.url]);
+                                $("#downLoadA").attr("download", annountObj[middleschool_config.feilName]);
+                                // console.log(middleschool_config.title);
+                            });
+                        };
+                        let getAreas = function () {
+                            ajax_get("http://localhost:8080/HighSchool/getDetailById", {}, function (data) {
+                                var overObj = JSON.parse(data);
+                                for (var i = 0; i < overObj.length; i++) {
+
+                                    $("#overScoreTB").append('<tr><td>' + overObj[i].highSchoolInfo[middleschool_config.highschoolName] + '</td><td>' + overObj[i].admissionInfos[0][middleschool_config.overScore] +
+                                        '</td><td>' + overObj[i].admissionInfos[1][middleschool_config.overScore] + '</td><td>' + overObj[i].admissionInfos[2][middleschool_config.overScore] +
+                                        '</td></tr>');
                                 }
                             });
-                            // console.log(highSchoolObjC);
-
-                        });
-
-                        let getNews = $.get("json/newsJson.js", function(data, status) {
-                            // $("#announcement").text(data);
-                            // debugger
-                            var annountObj = JSON.parse(data);
-                            // console.log(annountObj.title);
-                            $("#titleH").text(annountObj[middleschool_config.title]);
-                            $("#contentP").text(annountObj[middleschool_config.content]);
-                            $("#downLoadA").text(annountObj[middleschool_config.feilName]);
-                            $("#downLoadA").attr("href", annountObj[middleschool_config.url]);
-                            $("#downLoadA").attr("download", annountObj[middleschool_config.feilName]);
-                            // console.log(middleschool_config.title);
-                        });
+                        };
                     </script>
 
                 </div>
