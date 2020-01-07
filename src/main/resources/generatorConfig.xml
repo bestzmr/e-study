@@ -47,5 +47,6 @@
         <table tableName="teacher_show"/>
         <table tableName="user"/>
         <table tableName="user_video"/>
+        <table tableName="superior_file"/>
     </context>
 </generatorConfiguration>

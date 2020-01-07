@@ -43,11 +43,11 @@ function collegeOnchange() {
 				let type = "|";
 				if(collegeObj[i].collegeInfo.isArt == true){
 					type += "艺术|";
-				}else if(collegeObj[i].collegeInfo.isDoubleFirst == true) {
+				}if(collegeObj[i].collegeInfo.isDoubleFirst == true) {
 					type += "双一流|";
-				}else if(collegeObj[i].collegeInfo.isKey == true) {
+				}if(collegeObj[i].collegeInfo.isKey == true) {
 					type += "重点|";
-				}else if(collegeObj[i].collegeInfo.isUndergraduate == true) {
+				}if(collegeObj[i].collegeInfo.isUndergraduate == true) {
 					type += "本科|";
 				}else {
 					type += "专科|";

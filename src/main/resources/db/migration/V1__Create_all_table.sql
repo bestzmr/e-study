@@ -79,3 +79,11 @@ create table user_video(
     user_id bigint not null ,
     video_id bigint not null
 );
+
+create table superior_file(
+    id bigint primary key auto_increment,
+    title varchar(50),
+    description varchar (250),
+    download_url varchar (200),
+    times bigint
+);

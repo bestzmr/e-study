@@ -26,7 +26,7 @@
 <div id="container">
     <div id="left" class="left-width">
         <ul class="nav nav-pills nav-stacked left-consty">
-            <li role="presentation" class="active"><a id="a1" href="middleschool.jsp" style="text-align: center"><span class="glyphicon glyphicon-align-left"
+            <li role="presentation" class="active"><a id="a1" href="middleschool" style="text-align: center"><span class="glyphicon glyphicon-align-left"
                                                                                                                        aria-hidden="true"></span>中考</a></li>
             <li role="presentation">
                 <a id="a2" href="highschool" style="text-align: center">
