@@ -2,7 +2,6 @@ package cn.bestsort.e_study.pojo.vo;
 
 import cn.bestsort.e_study.pojo.dto.AdmissionInfo;
 import cn.bestsort.e_study.pojo.dto.HighSchoolInfo;
-import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;

@@ -73,7 +73,7 @@
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from select_course
+    from user_course
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -84,27 +84,27 @@
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from select_course
+    from user_course
     where id = #{id,jdbcType=BIGINT}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
-    delete from select_course
+    delete from user_course
     where id = #{id,jdbcType=BIGINT}
   </delete>
   <delete id="deleteByExample" parameterType="cn.bestsort.e_study.pojo.dto.SelectCourseExample">
-    delete from select_course
+    delete from user_course
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
   <insert id="insert" parameterType="cn.bestsort.e_study.pojo.dto.SelectCourse">
-    insert into select_course (id, user_id, course_id
+    insert into user_course (id, user_id, course_id
       )
     values (#{id,jdbcType=BIGINT}, #{userId,jdbcType=BIGINT}, #{courseId,jdbcType=BIGINT}
       )
   </insert>
   <insert id="insertSelective" parameterType="cn.bestsort.e_study.pojo.dto.SelectCourse">
-    insert into select_course
+    insert into user_course
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
         id,
@@ -129,13 +129,13 @@
     </trim>
   </insert>
   <select id="countByExample" parameterType="cn.bestsort.e_study.pojo.dto.SelectCourseExample" resultType="java.lang.Long">
-    select count(*) from select_course
+    select count(*) from user_course
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map">
-    update select_course
+    update user_course
     <set>
       <if test="record.id != null">
         id = #{record.id,jdbcType=BIGINT},
@@ -152,7 +152,7 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
-    update select_course
+    update user_course
     set id = #{record.id,jdbcType=BIGINT},
       user_id = #{record.userId,jdbcType=BIGINT},
       course_id = #{record.courseId,jdbcType=BIGINT}
@@ -161,7 +161,7 @@
     </if>
   </update>
   <update id="updateByPrimaryKeySelective" parameterType="cn.bestsort.e_study.pojo.dto.SelectCourse">
-    update select_course
+    update user_course
     <set>
       <if test="userId != null">
         user_id = #{userId,jdbcType=BIGINT},
@@ -173,7 +173,7 @@
     where id = #{id,jdbcType=BIGINT}
   </update>
   <update id="updateByPrimaryKey" parameterType="cn.bestsort.e_study.pojo.dto.SelectCourse">
-    update select_course
+    update user_course
     set user_id = #{userId,jdbcType=BIGINT},
       course_id = #{courseId,jdbcType=BIGINT}
     where id = #{id,jdbcType=BIGINT}

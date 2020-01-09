@@ -2,8 +2,9 @@ package cn.bestsort.e_study.mapper;
 
 import cn.bestsort.e_study.pojo.dto.User;
 import cn.bestsort.e_study.pojo.dto.UserExample;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface UserMapper {
     long countByExample(UserExample example);

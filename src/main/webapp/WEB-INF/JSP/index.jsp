@@ -24,5 +24,8 @@ hello,world
     <input type="submit" id="submitForm">
 </form>
 <a href="/video/videoPlay?url=A.M.V.mp4">播放视频</a>
+<script>
+    $.get("localhost:8080/web/index")
+</script>
 </body>
 </html>

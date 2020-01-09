@@ -23,10 +23,11 @@
     <script src="../../js/util.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body>
+<jsp:include page="reference.jsp" flush="true" />
 <div id="container">
     <div id="left" class="left-width">
         <ul class="nav nav-pills nav-stacked left-consty">
-            <li role="presentation" class="active"><a id="a1" href="middleschool" style="text-align: center"><span class="glyphicon glyphicon-align-left"
+            <li role="presentation" class="active"><a id="a1" href="middleschool.jsp" style="text-align: center"><span class="glyphicon glyphicon-align-left"
                                                                                                                        aria-hidden="true"></span>中考</a></li>
             <li role="presentation">
                 <a id="a2" href="highschool" style="text-align: center">
@@ -57,34 +58,39 @@
             <div id="rightContent" class="tab-content">
                 <div class="tab-pane fade in active" id="location">
                     <div id="highschoolList">
-                        <table id="highschoolListT" class="table table-bordered" style="height: 40px; font-size: 20px;border-collapse:separate; border-spacing:0px 10px;">
-                        </table>
+
                     </div>
                 </div>
                 <div class="tab-pane fade" id="announcement">
-                    <div id="titleCon" style="text-align: center;">
-                        <h1 id="titleH"></h1>
+                    <!-- 文章标题下拉列表 -->
+                    <div class="col-xs-12 form-inline">
+                        <div class="form-group form-group-xs">
+                            <div style="float: right; padding-left: 5px;padding-top: 5px" id="titleSelectDiv">
+                                <select id="titleSelect" data-live-search="true" class="form-control" style="width: 200px;" onchange="titleOnchange(this)">
+
+                                </select>
+                            </div>
+                        </div>
                     </div>
-                    <div id="contentCon" style="margin: 0 auto; margin-top: 20px; width: 70%;">
-                        <p id="contentP"></p>
-                    </div>
-                    <div id="downLoadCon" style="margin-left: 20px; margin-top: 300px;">
-                        <span class="glyphicon glyphicon-download-alt" aria-hidden="true"><a id="downLoadA"></a></span>
+
+                    <div id="fileContent" style="margin-top: 10px">
+
                     </div>
 
                 </div>
                 <div class="tab-pane fade" id="overScore">
+                    <div class="col-xs-12 form-inline">
+                        <div class="form-group form-group-xs">
+                            <div style="float: right;padding-top: 20px; padding-left: 5px;">
+                                <select id="overSelect" data-live-search="true" class="form-control" style="width: 144px; " onchange="overOnchange(this)">
+
+                                </select>
+                            </div>
+                        </div>
+                    </div>
                     <div style="text-align: center;">
                         <table id="overScoreList" class="table" align="center" halign="center">
-                            <thead>
-                            <tr>
-                                <th style="text-align: center; width: 200px;">学校</th>
-                                <th style="text-align: center;">2017分数</th>
-                                <th style="text-align: center;">2018分数</th>
-                                <th style="text-align: center;">2019分数</th>
-                            </tr>
-                            </thead>
-                            <tbody id="overScoreTB"></tbody>
+
                         </table>
                     </div>
                 </div>
@@ -93,7 +99,7 @@
                     <div class="col-xs-12 form-inline">
                         <div class="form-group form-group-xs">
                             <div style="float: right; padding-left: 5px;" id="selectDiv">
-                                <select id="selectbrand" data-live-search="true" class="form-control" style="width: 144px;" onchange="selectOnchang(this)">
+                                <select id="selectbrand" data-live-search="true" class="form-control" style="width: 144px;" onchange="selectOnchange(this)">
                                     <option value="">
                                         --请选择学区--
                                     </option>
@@ -115,30 +121,36 @@
                             getSchoolAreas();
                             getNews();
                             getAreas();
+                            getOverScore();
                         });
+                        // 历史录取添加学校列表
+                        let getOverScore = function() {
+                            ajax_get("http://localhost:8080/HighSchool/getAllHighSchools",{},function (data) {
+                                let overObject = JSON.parse(data);
+                                for (var i = 0; i < overObject.length; i++){
+                                    $("#overSelect").append('<option value="'+ overObject[i].id +'">'+ overObject[i].name +'</option>');
+                                }
+                                $("#overSelect").change();
+                            });
+                        };
+
                         let listCollege = function() {
                             // debugger;
                             ajax_get("http://localhost:8080/HighSchool/getAllHighSchools",{},function (data) {
-                                var highSchoolObj = JSON.parse(data);
+                                let highSchoolObj = JSON.parse(data);
                                 // 遍历本地中学，动态添加超链接
-                                // debugger;
-                                for (var i = 0; i <= highSchoolObj.length; i++) {
-                                    let fori = "school" + i;
-                                    $("#highschoolListT").append('<td><a id="' + fori + '" ></a></td>'); // 添加a标签
-                                    // 添加内容和href
-                                    $("#" + fori).text(highSchoolObj[i][middleschool_config.highschoolName]);
-                                    $("#" + fori).attr("href", highSchoolObj[i][middleschool_config.highschoolUrl]);
-                                    if (i % 4 == 0 && i != 0) {
-                                        $("#highschoolListT").append('</tr> <tr>');
-                                    }
+                                for (var i = 0; i < highSchoolObj.length; i++) {
+                                    let html = '<a href="'+ highSchoolObj[i].url +'" style="font-size: 20px;line-height: 100px" data-toggle="tooltip" data-placement="left" title="'+highSchoolObj[i].description
+                                        +'"><span>' + highSchoolObj[i].name +'</span></a>';
+                                    $("#highschoolList").append(html);
                                 }
-                                // console.log("1231");
+
                             });
                         };
 
                         let getSchoolAreas = function() {
                             ajax_get("http://localhost:8080/HighSchool/getAllHighSchools", {}, function (data) {
-                            var highSchoolObj = JSON.parse(data);
+                            let highSchoolObj = JSON.parse(data);
                             //去除重复的对象；添加下拉列表项
                                 for (var i = 0; i < highSchoolObj.length; i++) {
                                     for (var j = i + 1; j < highSchoolObj.length;) {
@@ -158,22 +170,18 @@
                             });
                         };
                         let getNews = function () {
-                            ajax_get("http://localhost:8080/HighSchool/getDetailById", {}, function (data) {
-                                // $("#announcement").text(data);
-                                // debugger
-                                var annountObj = JSON.parse(data);
-                                // console.log(annountObj.title);
-                                $("#titleH").text(annountObj[middleschool_config.title]);
-                                $("#contentP").text(annountObj[middleschool_config.content]);
-                                $("#downLoadA").text(annountObj[middleschool_config.feilName]);
-                                $("#downLoadA").attr("href", annountObj[middleschool_config.url]);
-                                $("#downLoadA").attr("download", annountObj[middleschool_config.feilName]);
-                                // console.log(middleschool_config.title);
-                            });
+                            for(var i = 0;i < 7 ; i++) {
+                                ajax_get("http://localhost:8080/getSuperiorFilesById", {"id":i}, function (data) {
+
+                                   let titleObj  = JSON.parse(data);
+                                   $("#titleSelect").append('<option value="' + titleObj.id + '">'+ titleObj.title +'</option>');
+                                   $("#titleSelect").change();
+                                });
+                            }
                         };
                         let getAreas = function () {
                             ajax_get("http://localhost:8080/HighSchool/getDetailById", {}, function (data) {
-                                var overObj = JSON.parse(data);
+                                let overObj = JSON.parse(data);
                                 for (var i = 0; i < overObj.length; i++) {
 
                                     $("#overScoreTB").append('<tr><td>' + overObj[i].highSchoolInfo[middleschool_config.highschoolName] + '</td><td>' + overObj[i].admissionInfos[0][middleschool_config.overScore] +

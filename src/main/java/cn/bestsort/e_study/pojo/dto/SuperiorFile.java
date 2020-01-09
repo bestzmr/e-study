@@ -11,6 +11,8 @@ public class SuperiorFile {
 
     private Long times;
 
+    private String fileName;
+
     public Long getId() {
         return id;
     }
@@ -51,6 +53,14 @@ public class SuperiorFile {
         this.times = times;
     }
 
+    public String getFileName() {
+        return fileName;
+    }
+
+    public void setFileName(String fileName) {
+        this.fileName = fileName == null ? null : fileName.trim();
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -62,6 +72,7 @@ public class SuperiorFile {
         sb.append(", description=").append(description);
         sb.append(", downloadUrl=").append(downloadUrl);
         sb.append(", times=").append(times);
+        sb.append(", fileName=").append(fileName);
         sb.append("]");
         return sb.toString();
     }

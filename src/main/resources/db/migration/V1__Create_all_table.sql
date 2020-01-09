@@ -85,5 +85,6 @@ create table superior_file(
     title varchar(50),
     description varchar (250),
     download_url varchar (200),
-    times bigint
+    times bigint,
+    file_name varchar (200)
 );

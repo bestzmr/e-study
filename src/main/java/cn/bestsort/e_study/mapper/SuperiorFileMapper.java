@@ -2,8 +2,9 @@ package cn.bestsort.e_study.mapper;
 
 import cn.bestsort.e_study.pojo.dto.SuperiorFile;
 import cn.bestsort.e_study.pojo.dto.SuperiorFileExample;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface SuperiorFileMapper {
     long countByExample(SuperiorFileExample example);

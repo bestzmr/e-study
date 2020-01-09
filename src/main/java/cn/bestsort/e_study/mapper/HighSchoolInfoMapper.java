@@ -2,8 +2,9 @@ package cn.bestsort.e_study.mapper;
 
 import cn.bestsort.e_study.pojo.dto.HighSchoolInfo;
 import cn.bestsort.e_study.pojo.dto.HighSchoolInfoExample;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface HighSchoolInfoMapper {
     long countByExample(HighSchoolInfoExample example);

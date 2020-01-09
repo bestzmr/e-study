@@ -1,9 +1,10 @@
 var college_info;
 var middleschool_config = {
 	"title": "title",
-	"content": "content",
-	"url": "url",
-	"feilName": "feilName",
+	"content": "description",
+	"url": "downloadUrl",
+	"fileName": "fileName",
+	"time": "times",
 
 	"highschoolName": "name",
 	"highschoolUrl": "url",

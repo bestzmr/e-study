@@ -23,6 +23,7 @@
     <script src="../../js/util.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body>
+<jsp:include page="reference.jsp" flush="true" />
 <div id="container">
     <div id="left" class="left-width">
         <ul class="nav nav-pills nav-stacked left-consty">
@@ -82,6 +83,7 @@
                 </div>
                 <div class="tab-pane fade" id="tips" style="text-align: center;">
                     <h1>功能开发中</h1>
+
                 </div>
             </div>
         </div>

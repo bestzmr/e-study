@@ -33,14 +33,15 @@ public class UserService {
         }
         return false;
     }
-    public Boolean login(User user){
+    public User login(User user){
         UserExample userExample = new UserExample();
         userExample.createCriteria().andTelEqualTo(user.getTel()).andPasswordEqualTo(user.getPassword());
         List<User> userList = userMapper.selectByExample(userExample);
         if (userList==null) {
-            return false;
+            return null;
         }
-        return true;
+
+        return userList.get(0);
     }
     public long getUserId(User user){
         UserExample userExample = new UserExample();

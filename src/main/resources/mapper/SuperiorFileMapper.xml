@@ -7,6 +7,7 @@
     <result column="description" jdbcType="VARCHAR" property="description" />
     <result column="download_url" jdbcType="VARCHAR" property="downloadUrl" />
     <result column="times" jdbcType="BIGINT" property="times" />
+    <result column="file_name" jdbcType="VARCHAR" property="fileName" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -67,7 +68,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, title, description, download_url, times
+    id, title, description, download_url, times, file_name
   </sql>
   <select id="selectByExample" parameterType="cn.bestsort.e_study.pojo.dto.SuperiorFileExample" resultMap="BaseResultMap">
     select
@@ -101,9 +102,11 @@
   </delete>
   <insert id="insert" parameterType="cn.bestsort.e_study.pojo.dto.SuperiorFile">
     insert into superior_file (id, title, description, 
-      download_url, times)
+      download_url, times, file_name
+      )
     values (#{id,jdbcType=BIGINT}, #{title,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, 
-      #{downloadUrl,jdbcType=VARCHAR}, #{times,jdbcType=BIGINT})
+      #{downloadUrl,jdbcType=VARCHAR}, #{times,jdbcType=BIGINT}, #{fileName,jdbcType=VARCHAR}
+      )
   </insert>
   <insert id="insertSelective" parameterType="cn.bestsort.e_study.pojo.dto.SuperiorFile">
     insert into superior_file
@@ -123,6 +126,9 @@
       <if test="times != null">
         times,
       </if>
+      <if test="fileName != null">
+        file_name,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -139,6 +145,9 @@
       </if>
       <if test="times != null">
         #{times,jdbcType=BIGINT},
+      </if>
+      <if test="fileName != null">
+        #{fileName,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -166,6 +175,9 @@
       <if test="record.times != null">
         times = #{record.times,jdbcType=BIGINT},
       </if>
+      <if test="record.fileName != null">
+        file_name = #{record.fileName,jdbcType=VARCHAR},
+      </if>
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -177,7 +189,8 @@
       title = #{record.title,jdbcType=VARCHAR},
       description = #{record.description,jdbcType=VARCHAR},
       download_url = #{record.downloadUrl,jdbcType=VARCHAR},
-      times = #{record.times,jdbcType=BIGINT}
+      times = #{record.times,jdbcType=BIGINT},
+      file_name = #{record.fileName,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -197,6 +210,9 @@
       <if test="times != null">
         times = #{times,jdbcType=BIGINT},
       </if>
+      <if test="fileName != null">
+        file_name = #{fileName,jdbcType=VARCHAR},
+      </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
@@ -205,7 +221,8 @@
     set title = #{title,jdbcType=VARCHAR},
       description = #{description,jdbcType=VARCHAR},
       download_url = #{downloadUrl,jdbcType=VARCHAR},
-      times = #{times,jdbcType=BIGINT}
+      times = #{times,jdbcType=BIGINT},
+      file_name = #{fileName,jdbcType=VARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>
